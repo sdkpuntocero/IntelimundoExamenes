@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelimundoExamenes", "IntelimundoExamenes.csproj", "{D87B721F-DE4E-48F8-9E28-B76B2C8D5557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntelimundoExamenes.Tests", "..\IntelimundoExamenes.Tests\IntelimundoExamenes.Tests.csproj", "{C6A3D5B1-DEE9-46B4-80C7-7E9E71458777}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D87B721F-DE4E-48F8-9E28-B76B2C8D5557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D87B721F-DE4E-48F8-9E28-B76B2C8D5557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D87B721F-DE4E-48F8-9E28-B76B2C8D5557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D87B721F-DE4E-48F8-9E28-B76B2C8D5557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A3D5B1-DEE9-46B4-80C7-7E9E71458777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A3D5B1-DEE9-46B4-80C7-7E9E71458777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A3D5B1-DEE9-46B4-80C7-7E9E71458777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A3D5B1-DEE9-46B4-80C7-7E9E71458777}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {259FFA2C-95EB-454A-94A5-1CE869493D30}
+	EndGlobalSection
+EndGlobal

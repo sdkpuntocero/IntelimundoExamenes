@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_imModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="catMateria">
+          <Key>
+            <PropertyRef Name="MateriaID" />
+          </Key>
+          <Property Name="MateriaID" Type="int" Nullable="false" />
+          <Property Name="Materia" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="catMateriaTema">
+          <Key>
+            <PropertyRef Name="MateriaTemaID" />
+          </Key>
+          <Property Name="MateriaTemaID" Type="int" Nullable="false" />
+          <Property Name="MateriaTema" Type="varchar" MaxLength="100" />
+          <Property Name="MateriaID" Type="int" />
+        </EntityType>
+        <EntityType Name="catMateriaTemaPregunta">
+          <Key>
+            <PropertyRef Name="MateriaTemaPreguntaID" />
+          </Key>
+          <Property Name="MateriaTemaPreguntaID" Type="int" Nullable="false" />
+          <Property Name="MateriaTemaPregunta" Type="varchar" MaxLength="350" />
+          <Property Name="MateriaTemaID" Type="int" />
+        </EntityType>
+        <EntityType Name="catMateriaTemaPreguntaRespuesta">
+          <Key>
+            <PropertyRef Name="MateriaTemaPreguntaRespuestaID" />
+          </Key>
+          <Property Name="MateriaTemaPreguntaRespuestaID" Type="int" Nullable="false" />
+          <Property Name="MateriaTemaPreguntaRespuesta" Type="varchar(max)" />
+          <Property Name="Respuesta" Type="bit" />
+          <Property Name="Justificacion" Type="varchar(max)" />
+          <Property Name="MateriaTemaPreguntaID" Type="int" />
+        </EntityType>
+        <EntityType Name="catMateriaTemaPreguntaRespuestaBitacora">
+          <Key>
+            <PropertyRef Name="MateriaTemaPreguntaRespuestaBitacoraID" />
+          </Key>
+          <Property Name="MateriaTemaPreguntaRespuestaBitacoraID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MateriaTemaPreguntaRespuestaID" Type="int" />
+          <Property Name="UsuarioID" Type="uniqueidentifier" />
+          <Property Name="FechaRegistro" Type="date" />
+          <Property Name="MateriaTemaPreguntaID" Type="int" />
+        </EntityType>
+        <EntityType Name="catMateriaTemaSintesis">
+          <Key>
+            <PropertyRef Name="MateriaTemaSintesisID" />
+          </Key>
+          <Property Name="MateriaTemaSintesisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sintesis" Type="varchar(max)" />
+          <Property Name="UsuarioID" Type="uniqueidentifier" />
+          <Property Name="FechaRegistro" Type="date" />
+          <Property Name="MateriaTemaID" Type="int" />
+        </EntityType>
+        <EntityType Name="fact_genero">
+          <Key>
+            <PropertyRef Name="genero_ID" />
+          </Key>
+          <Property Name="genero_ID" Type="int" Nullable="false" />
+          <Property Name="cod_gen" Type="varchar" MaxLength="50" />
+          <Property Name="genero_desc" Type="varchar" MaxLength="50" />
+          <Property Name="registro" Type="datetime" />
+        </EntityType>
+        <EntityType Name="fact_perfil">
+          <Key>
+            <PropertyRef Name="perfil_ID" />
+          </Key>
+          <Property Name="perfil_ID" Type="int" Nullable="false" />
+          <Property Name="cod_perfil" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="perfil_desc" Type="varchar" MaxLength="150" />
+          <Property Name="registro" Type="datetime" />
+        </EntityType>
+        <EntityType Name="inf_usr_personales">
+          <Key>
+            <PropertyRef Name="usr_personales_ID" />
+          </Key>
+          <Property Name="usr_personales_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" />
+          <Property Name="apaterno" Type="varchar" MaxLength="50" />
+          <Property Name="amaterno" Type="varchar" MaxLength="50" />
+          <Property Name="genero_ID" Type="int" />
+          <Property Name="estcivil_ID" Type="int" />
+          <Property Name="hijos" Type="int" />
+          <Property Name="cumple" Type="datetime" />
+          <Property Name="licencia" Type="varchar" MaxLength="50" />
+          <Property Name="rfc" Type="varchar" MaxLength="50" />
+          <Property Name="curp" Type="varchar" MaxLength="50" />
+          <Property Name="nss" Type="varchar" MaxLength="50" />
+          <Property Name="usuario_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="registro" Type="datetime" />
+        </EntityType>
+        <EntityType Name="inf_usr_rh">
+          <Key>
+            <PropertyRef Name="usr_rh_ID" />
+          </Key>
+          <Property Name="usr_rh_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fecha_ingreso" Type="datetime" Nullable="false" />
+          <Property Name="area_ID" Type="int" Nullable="false" />
+          <Property Name="perfil_ID" Type="int" Nullable="false" />
+          <Property Name="comentarios" Type="varchar(max)" />
+          <Property Name="usuario_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="registro" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_usuario">
+          <Key>
+            <PropertyRef Name="usuario_ID" />
+          </Key>
+          <Property Name="usuario_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="est_usr_ID" Type="int" />
+          <Property Name="cod_usr" Type="varchar" MaxLength="50" />
+          <Property Name="usr" Type="varchar" MaxLength="50" />
+          <Property Name="clave" Type="varchar" MaxLength="50" />
+          <Property Name="correo_corp" Type="varchar" MaxLength="50" />
+          <Property Name="centro_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="registro" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_inf_usr_personales_fact_genero">
+          <End Role="fact_genero" Type="Self.fact_genero" Multiplicity="0..1" />
+          <End Role="inf_usr_personales" Type="Self.inf_usr_personales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_genero">
+              <PropertyRef Name="genero_ID" />
+            </Principal>
+            <Dependent Role="inf_usr_personales">
+              <PropertyRef Name="genero_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_personales_inf_usuario">
+          <End Role="inf_usuario" Type="Self.inf_usuario" Multiplicity="1" />
+          <End Role="inf_usr_personales" Type="Self.inf_usr_personales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_usuario">
+              <PropertyRef Name="usuario_ID" />
+            </Principal>
+            <Dependent Role="inf_usr_personales">
+              <PropertyRef Name="usuario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_rh_fact_perfil">
+          <End Role="fact_perfil" Type="Self.fact_perfil" Multiplicity="1" />
+          <End Role="inf_usr_rh" Type="Self.inf_usr_rh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_perfil">
+              <PropertyRef Name="perfil_ID" />
+            </Principal>
+            <Dependent Role="inf_usr_rh">
+              <PropertyRef Name="perfil_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_rh_inf_usuario">
+          <End Role="inf_usuario" Type="Self.inf_usuario" Multiplicity="1" />
+          <End Role="inf_usr_rh" Type="Self.inf_usr_rh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_usuario">
+              <PropertyRef Name="usuario_ID" />
+            </Principal>
+            <Dependent Role="inf_usr_rh">
+              <PropertyRef Name="usuario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_imModelStoreContainer">
+          <EntitySet Name="catMateria" EntityType="Self.catMateria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="catMateriaTema" EntityType="Self.catMateriaTema" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="catMateriaTemaPregunta" EntityType="Self.catMateriaTemaPregunta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="catMateriaTemaPreguntaRespuesta" EntityType="Self.catMateriaTemaPreguntaRespuesta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="catMateriaTemaPreguntaRespuestaBitacora" EntityType="Self.catMateriaTemaPreguntaRespuestaBitacora" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="catMateriaTemaSintesis" EntityType="Self.catMateriaTemaSintesis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_genero" EntityType="Self.fact_genero" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_perfil" EntityType="Self.fact_perfil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_usr_personales" EntityType="Self.inf_usr_personales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_usr_rh" EntityType="Self.inf_usr_rh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_usuario" EntityType="Self.inf_usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_inf_usr_personales_fact_genero" Association="Self.FK_inf_usr_personales_fact_genero">
+            <End Role="fact_genero" EntitySet="fact_genero" />
+            <End Role="inf_usr_personales" EntitySet="inf_usr_personales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_personales_inf_usuario" Association="Self.FK_inf_usr_personales_inf_usuario">
+            <End Role="inf_usuario" EntitySet="inf_usuario" />
+            <End Role="inf_usr_personales" EntitySet="inf_usr_personales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_rh_fact_perfil" Association="Self.FK_inf_usr_rh_fact_perfil">
+            <End Role="fact_perfil" EntitySet="fact_perfil" />
+            <End Role="inf_usr_rh" EntitySet="inf_usr_rh" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_rh_inf_usuario" Association="Self.FK_inf_usr_rh_inf_usuario">
+            <End Role="inf_usuario" EntitySet="inf_usuario" />
+            <End Role="inf_usr_rh" EntitySet="inf_usr_rh" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_imModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="db_imEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="catMateria" EntityType="db_imModel.catMateria" />
+          <EntitySet Name="catMateriaTema" EntityType="db_imModel.catMateriaTema" />
+          <EntitySet Name="catMateriaTemaPregunta" EntityType="db_imModel.catMateriaTemaPregunta" />
+          <EntitySet Name="catMateriaTemaPreguntaRespuesta" EntityType="db_imModel.catMateriaTemaPreguntaRespuesta" />
+          <EntitySet Name="catMateriaTemaSintesis" EntityType="db_imModel.catMateriaTemaSintesis" />
+          <EntitySet Name="fact_genero" EntityType="db_imModel.fact_genero" />
+          <EntitySet Name="fact_perfil" EntityType="db_imModel.fact_perfil" />
+          <EntitySet Name="inf_usr_personales" EntityType="db_imModel.inf_usr_personales" />
+          <EntitySet Name="inf_usr_rh" EntityType="db_imModel.inf_usr_rh" />
+          <EntitySet Name="inf_usuario" EntityType="db_imModel.inf_usuario" />
+          <AssociationSet Name="FK_inf_usr_personales_fact_genero" Association="db_imModel.FK_inf_usr_personales_fact_genero">
+            <End Role="fact_genero" EntitySet="fact_genero" />
+            <End Role="inf_usr_personales" EntitySet="inf_usr_personales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_rh_fact_perfil" Association="db_imModel.FK_inf_usr_rh_fact_perfil">
+            <End Role="fact_perfil" EntitySet="fact_perfil" />
+            <End Role="inf_usr_rh" EntitySet="inf_usr_rh" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_personales_inf_usuario" Association="db_imModel.FK_inf_usr_personales_inf_usuario">
+            <End Role="inf_usuario" EntitySet="inf_usuario" />
+            <End Role="inf_usr_personales" EntitySet="inf_usr_personales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_rh_inf_usuario" Association="db_imModel.FK_inf_usr_rh_inf_usuario">
+            <End Role="inf_usuario" EntitySet="inf_usuario" />
+            <End Role="inf_usr_rh" EntitySet="inf_usr_rh" />
+          </AssociationSet>
+          <EntitySet Name="catMateriaTemaPreguntaRespuestaBitacora" EntityType="db_imModel.catMateriaTemaPreguntaRespuestaBitacora" />
+        </EntityContainer>
+        <EntityType Name="catMateria">
+          <Key>
+            <PropertyRef Name="MateriaID" />
+          </Key>
+          <Property Name="MateriaID" Type="Int32" Nullable="false" />
+          <Property Name="Materia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="catMateriaTema">
+          <Key>
+            <PropertyRef Name="MateriaTemaID" />
+          </Key>
+          <Property Name="MateriaTemaID" Type="Int32" Nullable="false" />
+          <Property Name="MateriaTema" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MateriaID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="catMateriaTemaPregunta">
+          <Key>
+            <PropertyRef Name="MateriaTemaPreguntaID" />
+          </Key>
+          <Property Name="MateriaTemaPreguntaID" Type="Int32" Nullable="false" />
+          <Property Name="MateriaTemaPregunta" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="MateriaTemaID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="catMateriaTemaPreguntaRespuesta">
+          <Key>
+            <PropertyRef Name="MateriaTemaPreguntaRespuestaID" />
+          </Key>
+          <Property Name="MateriaTemaPreguntaRespuestaID" Type="Int32" Nullable="false" />
+          <Property Name="MateriaTemaPreguntaRespuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Respuesta" Type="Boolean" />
+          <Property Name="Justificacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MateriaTemaPreguntaID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="catMateriaTemaSintesis">
+          <Key>
+            <PropertyRef Name="MateriaTemaSintesisID" />
+          </Key>
+          <Property Name="MateriaTemaSintesisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sintesis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioID" Type="Guid" />
+          <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
+          <Property Name="MateriaTemaID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="fact_genero">
+          <Key>
+            <PropertyRef Name="genero_ID" />
+          </Key>
+          <Property Name="genero_ID" Type="Int32" Nullable="false" />
+          <Property Name="cod_gen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="genero_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="registro" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="inf_usr_personales" Relationship="db_imModel.FK_inf_usr_personales_fact_genero" FromRole="fact_genero" ToRole="inf_usr_personales" />
+        </EntityType>
+        <EntityType Name="fact_perfil">
+          <Key>
+            <PropertyRef Name="perfil_ID" />
+          </Key>
+          <Property Name="perfil_ID" Type="Int32" Nullable="false" />
+          <Property Name="cod_perfil" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="perfil_desc" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="registro" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="inf_usr_rh" Relationship="db_imModel.FK_inf_usr_rh_fact_perfil" FromRole="fact_perfil" ToRole="inf_usr_rh" />
+        </EntityType>
+        <EntityType Name="inf_usr_personales">
+          <Key>
+            <PropertyRef Name="usr_personales_ID" />
+          </Key>
+          <Property Name="usr_personales_ID" Type="Guid" Nullable="false" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="amaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="genero_ID" Type="Int32" />
+          <Property Name="estcivil_ID" Type="Int32" />
+          <Property Name="hijos" Type="Int32" />
+          <Property Name="cumple" Type="DateTime" Precision="3" />
+          <Property Name="licencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="curp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nss" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usuario_ID" Type="Guid" Nullable="false" />
+          <Property Name="registro" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="fact_genero" Relationship="db_imModel.FK_inf_usr_personales_fact_genero" FromRole="inf_usr_personales" ToRole="fact_genero" />
+          <NavigationProperty Name="inf_usuario" Relationship="db_imModel.FK_inf_usr_personales_inf_usuario" FromRole="inf_usr_personales" ToRole="inf_usuario" />
+        </EntityType>
+        <EntityType Name="inf_usr_rh">
+          <Key>
+            <PropertyRef Name="usr_rh_ID" />
+          </Key>
+          <Property Name="usr_rh_ID" Type="Guid" Nullable="false" />
+          <Property Name="fecha_ingreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="area_ID" Type="Int32" Nullable="false" />
+          <Property Name="perfil_ID" Type="Int32" Nullable="false" />
+          <Property Name="comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="usuario_ID" Type="Guid" Nullable="false" />
+          <Property Name="registro" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="fact_perfil" Relationship="db_imModel.FK_inf_usr_rh_fact_perfil" FromRole="inf_usr_rh" ToRole="fact_perfil" />
+          <NavigationProperty Name="inf_usuario" Relationship="db_imModel.FK_inf_usr_rh_inf_usuario" FromRole="inf_usr_rh" ToRole="inf_usuario" />
+        </EntityType>
+        <EntityType Name="inf_usuario">
+          <Key>
+            <PropertyRef Name="usuario_ID" />
+          </Key>
+          <Property Name="usuario_ID" Type="Guid" Nullable="false" />
+          <Property Name="est_usr_ID" Type="Int32" />
+          <Property Name="cod_usr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="correo_corp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="centro_ID" Type="Guid" Nullable="false" />
+          <Property Name="registro" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="inf_usr_personales" Relationship="db_imModel.FK_inf_usr_personales_inf_usuario" FromRole="inf_usuario" ToRole="inf_usr_personales" />
+          <NavigationProperty Name="inf_usr_rh" Relationship="db_imModel.FK_inf_usr_rh_inf_usuario" FromRole="inf_usuario" ToRole="inf_usr_rh" />
+        </EntityType>
+        <Association Name="FK_inf_usr_personales_fact_genero">
+          <End Type="db_imModel.fact_genero" Role="fact_genero" Multiplicity="0..1" />
+          <End Type="db_imModel.inf_usr_personales" Role="inf_usr_personales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_genero">
+              <PropertyRef Name="genero_ID" />
+            </Principal>
+            <Dependent Role="inf_usr_personales">
+              <PropertyRef Name="genero_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_rh_fact_perfil">
+          <End Type="db_imModel.fact_perfil" Role="fact_perfil" Multiplicity="1" />
+          <End Type="db_imModel.inf_usr_rh" Role="inf_usr_rh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_perfil">
+              <PropertyRef Name="perfil_ID" />
+            </Principal>
+            <Dependent Role="inf_usr_rh">
+              <PropertyRef Name="perfil_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_personales_inf_usuario">
+          <End Type="db_imModel.inf_usuario" Role="inf_usuario" Multiplicity="1" />
+          <End Type="db_imModel.inf_usr_personales" Role="inf_usr_personales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_usuario">
+              <PropertyRef Name="usuario_ID" />
+            </Principal>
+            <Dependent Role="inf_usr_personales">
+              <PropertyRef Name="usuario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_rh_inf_usuario">
+          <End Type="db_imModel.inf_usuario" Role="inf_usuario" Multiplicity="1" />
+          <End Type="db_imModel.inf_usr_rh" Role="inf_usr_rh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_usuario">
+              <PropertyRef Name="usuario_ID" />
+            </Principal>
+            <Dependent Role="inf_usr_rh">
+              <PropertyRef Name="usuario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="catMateriaTemaPreguntaRespuestaBitacora">
+          <Key>
+            <PropertyRef Name="MateriaTemaPreguntaRespuestaBitacoraID" />
+          </Key>
+          <Property Name="MateriaTemaPreguntaRespuestaBitacoraID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MateriaTemaPreguntaRespuestaID" Type="Int32" />
+          <Property Name="UsuarioID" Type="Guid" />
+          <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
+          <Property Name="MateriaTemaPreguntaID" Type="Int32" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_imModelStoreContainer" CdmEntityContainer="db_imEntities">
+          <EntitySetMapping Name="catMateria">
+            <EntityTypeMapping TypeName="db_imModel.catMateria">
+              <MappingFragment StoreEntitySet="catMateria">
+                <ScalarProperty Name="Materia" ColumnName="Materia" />
+                <ScalarProperty Name="MateriaID" ColumnName="MateriaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catMateriaTema">
+            <EntityTypeMapping TypeName="db_imModel.catMateriaTema">
+              <MappingFragment StoreEntitySet="catMateriaTema">
+                <ScalarProperty Name="MateriaID" ColumnName="MateriaID" />
+                <ScalarProperty Name="MateriaTema" ColumnName="MateriaTema" />
+                <ScalarProperty Name="MateriaTemaID" ColumnName="MateriaTemaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catMateriaTemaPregunta">
+            <EntityTypeMapping TypeName="db_imModel.catMateriaTemaPregunta">
+              <MappingFragment StoreEntitySet="catMateriaTemaPregunta">
+                <ScalarProperty Name="MateriaTemaID" ColumnName="MateriaTemaID" />
+                <ScalarProperty Name="MateriaTemaPregunta" ColumnName="MateriaTemaPregunta" />
+                <ScalarProperty Name="MateriaTemaPreguntaID" ColumnName="MateriaTemaPreguntaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catMateriaTemaPreguntaRespuesta">
+            <EntityTypeMapping TypeName="db_imModel.catMateriaTemaPreguntaRespuesta">
+              <MappingFragment StoreEntitySet="catMateriaTemaPreguntaRespuesta">
+                <ScalarProperty Name="MateriaTemaPreguntaID" ColumnName="MateriaTemaPreguntaID" />
+                <ScalarProperty Name="Justificacion" ColumnName="Justificacion" />
+                <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+                <ScalarProperty Name="MateriaTemaPreguntaRespuesta" ColumnName="MateriaTemaPreguntaRespuesta" />
+                <ScalarProperty Name="MateriaTemaPreguntaRespuestaID" ColumnName="MateriaTemaPreguntaRespuestaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catMateriaTemaSintesis">
+            <EntityTypeMapping TypeName="db_imModel.catMateriaTemaSintesis">
+              <MappingFragment StoreEntitySet="catMateriaTemaSintesis">
+                <ScalarProperty Name="MateriaTemaID" ColumnName="MateriaTemaID" />
+                <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+                <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
+                <ScalarProperty Name="Sintesis" ColumnName="Sintesis" />
+                <ScalarProperty Name="MateriaTemaSintesisID" ColumnName="MateriaTemaSintesisID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_genero">
+            <EntityTypeMapping TypeName="db_imModel.fact_genero">
+              <MappingFragment StoreEntitySet="fact_genero">
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="genero_desc" ColumnName="genero_desc" />
+                <ScalarProperty Name="cod_gen" ColumnName="cod_gen" />
+                <ScalarProperty Name="genero_ID" ColumnName="genero_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_perfil">
+            <EntityTypeMapping TypeName="db_imModel.fact_perfil">
+              <MappingFragment StoreEntitySet="fact_perfil">
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="perfil_desc" ColumnName="perfil_desc" />
+                <ScalarProperty Name="cod_perfil" ColumnName="cod_perfil" />
+                <ScalarProperty Name="perfil_ID" ColumnName="perfil_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_usr_personales">
+            <EntityTypeMapping TypeName="db_imModel.inf_usr_personales">
+              <MappingFragment StoreEntitySet="inf_usr_personales">
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="usuario_ID" ColumnName="usuario_ID" />
+                <ScalarProperty Name="nss" ColumnName="nss" />
+                <ScalarProperty Name="curp" ColumnName="curp" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="licencia" ColumnName="licencia" />
+                <ScalarProperty Name="cumple" ColumnName="cumple" />
+                <ScalarProperty Name="hijos" ColumnName="hijos" />
+                <ScalarProperty Name="estcivil_ID" ColumnName="estcivil_ID" />
+                <ScalarProperty Name="genero_ID" ColumnName="genero_ID" />
+                <ScalarProperty Name="amaterno" ColumnName="amaterno" />
+                <ScalarProperty Name="apaterno" ColumnName="apaterno" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="usr_personales_ID" ColumnName="usr_personales_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_usr_rh">
+            <EntityTypeMapping TypeName="db_imModel.inf_usr_rh">
+              <MappingFragment StoreEntitySet="inf_usr_rh">
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="usuario_ID" ColumnName="usuario_ID" />
+                <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+                <ScalarProperty Name="perfil_ID" ColumnName="perfil_ID" />
+                <ScalarProperty Name="area_ID" ColumnName="area_ID" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="usr_rh_ID" ColumnName="usr_rh_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_usuario">
+            <EntityTypeMapping TypeName="db_imModel.inf_usuario">
+              <MappingFragment StoreEntitySet="inf_usuario">
+                <ScalarProperty Name="registro" ColumnName="registro" />
+                <ScalarProperty Name="centro_ID" ColumnName="centro_ID" />
+                <ScalarProperty Name="correo_corp" ColumnName="correo_corp" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="usr" ColumnName="usr" />
+                <ScalarProperty Name="cod_usr" ColumnName="cod_usr" />
+                <ScalarProperty Name="est_usr_ID" ColumnName="est_usr_ID" />
+                <ScalarProperty Name="usuario_ID" ColumnName="usuario_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catMateriaTemaPreguntaRespuestaBitacora">
+            <EntityTypeMapping TypeName="db_imModel.catMateriaTemaPreguntaRespuestaBitacora">
+              <MappingFragment StoreEntitySet="catMateriaTemaPreguntaRespuestaBitacora">
+                <ScalarProperty Name="MateriaTemaPreguntaID" ColumnName="MateriaTemaPreguntaID" />
+                <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+                <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
+                <ScalarProperty Name="MateriaTemaPreguntaRespuestaID" ColumnName="MateriaTemaPreguntaRespuestaID" />
+                <ScalarProperty Name="MateriaTemaPreguntaRespuestaBitacoraID" ColumnName="MateriaTemaPreguntaRespuestaBitacoraID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
