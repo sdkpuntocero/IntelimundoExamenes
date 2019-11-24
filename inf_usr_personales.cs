@@ -29,6 +29,7 @@ namespace IntelimundoExamenes
         public System.Guid usuario_ID { get; set; }
         public Nullable<System.DateTime> registro { get; set; }
     
+        public virtual fact_estcivil fact_estcivil { get; set; }
         public virtual fact_genero fact_genero { get; set; }
         public virtual inf_usuario inf_usuario { get; set; }
     }

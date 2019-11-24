@@ -4,22 +4,91 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1625b4b380ce4319ad8175e4350e9fd4" Name="Diagram1">
-        <EntityTypeShape EntityType="db_imModel.catMateria" Width="1.5" PointX="5.75" PointY="1.5" />
-        <EntityTypeShape EntityType="db_imModel.catMateriaTema" Width="1.5" PointX="0.75" PointY="8.5" />
-        <EntityTypeShape EntityType="db_imModel.catMateriaTemaPregunta" Width="1.5" PointX="2.75" PointY="8.5" />
-        <EntityTypeShape EntityType="db_imModel.catMateriaTemaPreguntaRespuesta" Width="1.5" PointX="8.75" PointY="1.5" />
-        <EntityTypeShape EntityType="db_imModel.catMateriaTemaSintesis" Width="1.5" PointX="8.75" PointY="4.5" />
-        <EntityTypeShape EntityType="db_imModel.fact_genero" Width="1.5" PointX="3.75" PointY="0.75" />
-        <EntityTypeShape EntityType="db_imModel.fact_perfil" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_usr_personales" Width="1.5" PointX="6" PointY="3.75" />
-        <EntityTypeShape EntityType="db_imModel.inf_usr_rh" Width="1.5" PointX="3" PointY="4.375" />
-        <EntityTypeShape EntityType="db_imModel.inf_usuario" Width="1.5" PointX="0.75" PointY="4.25" />
-        <AssociationConnector Association="db_imModel.FK_inf_usr_personales_fact_genero" />
-        <AssociationConnector Association="db_imModel.FK_inf_usr_rh_fact_perfil" />
-        <AssociationConnector Association="db_imModel.FK_inf_usr_personales_inf_usuario" />
-        <AssociationConnector Association="db_imModel.FK_inf_usr_rh_inf_usuario" />
-        <EntityTypeShape EntityType="db_imModel.catMateriaTemaPreguntaRespuestaBitacora" Width="1.5" PointX="5.375" PointY="8.75" />
+      <Diagram DiagramId="2af9723ab2e54749812e656010f92ddb" Name="Diagram1">
+        <EntityTypeShape EntityType="db_imModel.catMateria" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.catMateriaTema" Width="1.5" PointX="2.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.catMateriaTemaPregunta" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.catMateriaTemaPreguntaRespuesta" Width="1.5" PointX="9.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.catMateriaTemaPreguntaRespuestaBitacora" Width="1.5" PointX="11.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.catMateriaTemaSintesis" Width="1.5" PointX="11.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_alergia" Width="1.5" PointX="11" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_area" Width="1.5" PointX="12" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_banco" Width="1.5" PointX="8" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_centro_tipo" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_clte_cont_tipo" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_est_clte" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_est_cnt" Width="1.5" PointX="0.75" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_est_comp" Width="1.5" PointX="6" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_est_inv" Width="1.5" PointX="3.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_est_prov" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_est_usr" Width="1.5" PointX="3.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_est_vnta" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_estcivil" Width="1.5" PointX="9" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_genero" Width="1.5" PointX="9" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_grado_escolar" Width="1.5" PointX="3.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_licencia" Width="1.5" PointX="0.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_nivel_escolar" Width="1.5" PointX="1.5" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_perfil" Width="1.5" PointX="12" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_periodo" Width="1.5" PointX="12.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_rfc_tipo" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.fact_tipo_escolar" Width="1.5" PointX="9" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_centro" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_centro_ctrl" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_clte" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_clte_contacto" Width="1.5" PointX="10.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_comp" Width="1.5" PointX="8.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_email_env" Width="1.5" PointX="12.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_emp" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_inv" Width="1.5" PointX="6" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_prov_contacto" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_proveedor" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_usr_bancario" Width="1.5" PointX="10.25" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_usr_contacto" Width="1.5" PointX="8.25" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_usr_escolar" Width="1.5" PointX="11.25" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_usr_medicos" Width="1.5" PointX="13.25" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_usr_personales" Width="1.5" PointX="11.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_usr_rh" Width="1.5" PointX="14.25" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_usuario" Width="1.5" PointX="6" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_vnta" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_vnta_inv" Width="1.5" PointX="7.5" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_imModel.inf_sepomex" Width="1.5" PointX="13.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_medicos_fact_alergia" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_rh_fact_area" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_bancario_fact_banco" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_fact_centro_tipo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_clte_contacto_fact_clte_cont_tipo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_clte_fact_est_clte" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_fact_est_cnt" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_comp_fact_est_comp" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_inv_fact_est_inv" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_proveedor_fact_est_prov" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usuario_fact_est_usr" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_vnta_fact_est_vnta" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_personales_fact_estcivil" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_personales_fact_genero" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_fact_grado_escolar_fact_nivel_escolar" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_inv_fact_grado_escolar" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_fact_licencia" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_rh_fact_perfil" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_proveedor_fact_rfc_tipo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_escolar_fact_tipo_escolar" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_ctrl_inf_centro" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_inf_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_clte_inf_centro" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_comp_inf_centro" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_proveedor_inf_centro" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_vnta_inf_centro" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_centro_ctrl_inf_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_clte_contacto_inf_clte" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_inv_inf_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_prov_contacto_inf_proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_bancario_inf_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_contacto_inf_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_escolar_inf_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_medicos_inf_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_personales_inf_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_usr_rh_inf_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="db_imModel.FK_inf_vnta_inv_inf_vnta" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

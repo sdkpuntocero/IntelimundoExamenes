@@ -80,6 +80,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Acceso.aspx" />
+    <Content Include="contactform\contactform.js" />
+    <Content Include="contactform\Readme.txt" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -1656,14 +1658,36 @@
     <Content Include="Content\fontawesome-free-5.9.0-web\webfonts\fa-brands-400.svg" />
     <Content Include="Content\fontawesome-free-5.9.0-web\webfonts\fa-regular-400.svg" />
     <Content Include="Content\fontawesome-free-5.9.0-web\webfonts\fa-solid-900.svg" />
+    <Content Include="css\bootstrap-4.3.1.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\imagehover.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Default.aspx" />
     <Content Include="Estilos\Acceso.css" />
     <Content Include="Estilos\Ecuaciones.css" />
+    <Content Include="Estilos\imagehover.min.css" />
     <Content Include="Estilos\Panel.css" />
+    <Content Include="Estilos\style.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Imagenes\ajax-loader.gif" />
     <Content Include="Imagenes\ico_ve.png" />
     <Content Include="Imagenes\im.png" />
     <Content Include="Imagenes\nophoto.svg" />
     <Content Include="Imagenes\panel.png" />
+    <Content Include="images\card-img.png" />
+    <Content Include="img\bg-banner.jpg" />
+    <Content Include="img\course01.jpg" />
+    <Content Include="img\course02.jpg" />
+    <Content Include="img\course03.jpg" />
+    <Content Include="img\course04.jpg" />
+    <Content Include="img\course05.jpg" />
+    <Content Include="img\course06.jpg" />
+    <Content Include="img\course07.jpg" />
+    <Content Include="img\course08.jpg" />
+    <Content Include="img\logo-web.png" />
+    <Content Include="img\mentor.jpg" />
+    <Content Include="index.html" />
     <Content Include="Intelimundo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Intelimundo.edmx</DependentUpon>
@@ -1674,7 +1698,16 @@
       <DependentUpon>Intelimundo.edmx</DependentUpon>
       <LastGenOutput>Intelimundo.cs</LastGenOutput>
     </Content>
+    <Content Include="js\bootstrap-4.3.1.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\jquery-3.3.1.min.js" />
+    <Content Include="js\jquery.easing.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\popper.min.js" />
     <Content Include="Panel.aspx" />
+    <Content Include="PreRegistro.aspx" />
+    <Content Include="PreRegistro.html" />
     <Content Include="RegistroInicial.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -1752,6 +1785,11 @@
     <Content Include="Content\fontawesome-free-5.9.0-web\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\fontawesome-free-5.9.0-web\webfonts\fa-solid-900.woff" />
     <Content Include="Content\fontawesome-free-5.9.0-web\webfonts\fa-solid-900.woff2" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <EntityDeploy Include="Intelimundo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Intelimundo.Designer.cs</LastGenOutput>
@@ -1773,6 +1811,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Test.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -1810,11 +1849,120 @@
     <Compile Include="catMateriaTemaSintesis.cs">
       <DependentUpon>Intelimundo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Encrypta.cs" />
+    <Compile Include="fact_alergia.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_area.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_banco.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_centro_tipo.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_clte_cont_tipo.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_estcivil.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_clte.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_cnt.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_comp.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_inv.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_prov.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_usr.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_vnta.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
     <Compile Include="fact_genero.cs">
       <DependentUpon>Intelimundo.tt</DependentUpon>
     </Compile>
+    <Compile Include="fact_grado_escolar.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_licencia.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_nivel_escolar.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
     <Compile Include="fact_perfil.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_periodo.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_rfc_tipo.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_escolar.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_centro.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_centro_ctrl.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_clte.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_clte_contacto.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_comp.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_email_env.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_emp.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_inv.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_proveedor.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_prov_contacto.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_sepomex.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_usr_bancario.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_usr_contacto.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_usr_escolar.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_usr_medicos.cs">
       <DependentUpon>Intelimundo.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_usr_personales.cs">
@@ -1824,6 +1972,12 @@
       <DependentUpon>Intelimundo.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_usuario.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_vnta.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_vnta_inv.cs">
       <DependentUpon>Intelimundo.tt</DependentUpon>
     </Compile>
     <Compile Include="Intelimundo.Context.cs">
@@ -1848,6 +2002,16 @@
     <Compile Include="Panel.aspx.designer.cs">
       <DependentUpon>Panel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PreguntasSP_Result.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PreRegistro.aspx.cs">
+      <DependentUpon>PreRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreRegistro.aspx.designer.cs">
+      <DependentUpon>PreRegistro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroInicial.aspx.cs">
       <DependentUpon>RegistroInicial.aspx</DependentUpon>
@@ -1855,6 +2019,16 @@
     </Compile>
     <Compile Include="RegistroInicial.aspx.designer.cs">
       <DependentUpon>RegistroInicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RespuestasSP_Result.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1876,7 +2050,7 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Material\" />
+    <Folder Include="Material\Universidad\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

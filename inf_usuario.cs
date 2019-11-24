@@ -17,6 +17,11 @@ namespace IntelimundoExamenes
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public inf_usuario()
         {
+            this.inf_centro_ctrl = new HashSet<inf_centro_ctrl>();
+            this.inf_usr_bancario = new HashSet<inf_usr_bancario>();
+            this.inf_usr_contacto = new HashSet<inf_usr_contacto>();
+            this.inf_usr_escolar = new HashSet<inf_usr_escolar>();
+            this.inf_usr_medicos = new HashSet<inf_usr_medicos>();
             this.inf_usr_personales = new HashSet<inf_usr_personales>();
             this.inf_usr_rh = new HashSet<inf_usr_rh>();
         }
@@ -30,6 +35,17 @@ namespace IntelimundoExamenes
         public System.Guid centro_ID { get; set; }
         public Nullable<System.DateTime> registro { get; set; }
     
+        public virtual fact_est_usr fact_est_usr { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_centro_ctrl> inf_centro_ctrl { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_usr_bancario> inf_usr_bancario { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_usr_contacto> inf_usr_contacto { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_usr_escolar> inf_usr_escolar { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<inf_usr_medicos> inf_usr_medicos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<inf_usr_personales> inf_usr_personales { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

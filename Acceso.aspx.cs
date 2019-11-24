@@ -11,7 +11,7 @@ namespace IntelimundoExamenes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         protected void btn_acceso_Click(object sender, EventArgs e)
@@ -78,6 +78,11 @@ namespace IntelimundoExamenes
             lblModalBody.Text = contenido;
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
             upModal.Update();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

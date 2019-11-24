@@ -82,7 +82,7 @@
                                     <asp:Label ID="lblModalBody" CssClass="login100-form-title" runat="server" Text=""></asp:Label>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                                    <asp:Button CssClass="btn btn-primary btn-block btn-lg" ID="Button1" runat="server" Text="Iniciar sesión" TabIndex="3" OnClick="Button1_Click" />
                                 </div>
                             </div>
                         </ContentTemplate>
