@@ -15,12 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- =======================================================
-    Theme Name: Mentor
-    Theme URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
+    <script async data-id="22292" src="https://cdn.widgetwhats.com/script.min.js"></script>
 </head>
 
 <body>
@@ -50,7 +45,7 @@
             </div>
         </nav>
         <!--/ Navigation bar-->
-           <!--Modal box-->
+        <!--Modal box-->
 
         <div class="modal fade" id="login" role="dialog">
             <div class="modal-dialog modal-sm">
@@ -70,28 +65,28 @@
                         <div class="login-box-body">
                             <p class="login-box-msg">Inicia sesión para comenzar</p>
                             <div class="form-group">
-                                <form name="" id="loginForm">
-                                    <div class="form-group has-feedback">
-                                        <!----- username -------------->
-                                        <input class="form-control" runat="server" placeholder="Username" id="loginid" type="text"  required />
-                                        <span style="display: none; font-weight: bold; position: absolute; color: red; position: absolute; padding: 4px; font-size: 11px; background-color: rgba(128, 128, 128, 0.26); z-index: 17; right: 27px; top: 5px;" id="span_loginid"></span>
-                                        <!---Alredy exists  ! -->
-                                        <span class=" form-control-feedback"><i class="fas fa-user-lock" style="color: orangered"></i></span>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <!----- password -------------->
-                                        <input class="form-control" runat="server" placeholder="Password" id="loginpsw" type="password" autocomplete="off" required />
-                                        <span style="display: none; font-weight: bold; position: absolute; color: grey; position: absolute; padding: 4px; font-size: 11px; background-color: rgba(128, 128, 128, 0.26); z-index: 17; right: 27px; top: 5px;" id="span_loginpsw"></span>
-                                        <!---Alredy exists  ! -->
-                                        <span class=" form-control-feedback"><i class="fas fa-key" style="color: orangered"></i></span>
-                                    </div>
-                                    <div class="row">
 
-                                        <div class="col-xs-12">
-                                            <asp:Button CssClass="btn btn-green btn-block btn-flat" ID="btn_acceso" runat="server" Text="Iniciar sesión" TabIndex="3" OnClick="Button1_Click" />
-                                        </div>
+                                <div class="form-group has-feedback">
+                                    <!----- username -------------->
+                                    <input class="form-control" runat="server" placeholder="Username" id="loginid" type="text" required />
+                                    <span style="display: none; font-weight: bold; position: absolute; color: #f6d738; position: absolute; padding: 4px; font-size: 11px; background-color: rgba(128, 128, 128, 0.26); z-index: 17; right: 27px; top: 5px;" id="span_loginid"></span>
+                                    <!---Alredy exists  ! -->
+                                    <span class=" form-control-feedback"><i class="fas fa-user-lock" style="color: #f6d738"></i></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <!----- password -------------->
+                                    <input class="form-control" runat="server" placeholder="Password" id="loginpsw" type="password" autocomplete="off" required />
+                                    <span style="display: none; font-weight: bold; position: absolute; color: grey; position: absolute; padding: 4px; font-size: 11px; background-color: rgba(128, 128, 128, 0.26); z-index: 17; right: 27px; top: 5px;" id="span_loginpsw"></span>
+                                    <!---Alredy exists  ! -->
+                                    <span class=" form-control-feedback"><i class="fas fa-key" style="color: #f6d738"></i></span>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-12">
+                                        <asp:Button CssClass="btn btn-green btn-block btn-flat" ID="btn_acceso" runat="server" Text="Iniciar sesión" TabIndex="3" OnClick="Button1_Click" />
                                     </div>
-                                </form>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -107,7 +102,7 @@
                     <div class="row">
                         <div class="banner-text text-center">
                             <div class="text-border">
-                                <h2 class="text-dec">Aula Fénix</h2>
+                                <h2 class="text-dec">Aula / Intelimundo </h2>
                             </div>
                             <div class="intro-para text-center quote">
                                 <p class="big-text">¡La mejor plataforma para preparar tu examen!</p>
@@ -605,13 +600,12 @@
                 </ul>
                 ©2019. Todos los derechos reservados
       <div class="credits">
-
           Diseñada por <a href="#">intelimundo</a>
       </div>
             </div>
         </footer>
         <!--/ Footer-->
-                <div class="modal" id="myModal">
+        <div class="modal" id="myModal">
             <div class="modal-dialog" role="document">
                 <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
                     <ContentTemplate>
@@ -624,7 +618,7 @@
                                 <asp:Label ID="lblModalBody" CssClass="login100-form-title" runat="server" Text=""></asp:Label>
                             </div>
                             <div class="modal-footer">
-                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
                             </div>
                         </div>
                     </ContentTemplate>

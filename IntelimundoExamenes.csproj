@@ -79,7 +79,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Acceso.aspx" />
     <Content Include="contactform\contactform.js" />
     <Content Include="contactform\Readme.txt" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -1687,7 +1686,6 @@
     <Content Include="img\course08.jpg" />
     <Content Include="img\logo-web.png" />
     <Content Include="img\mentor.jpg" />
-    <Content Include="index.html" />
     <Content Include="Intelimundo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Intelimundo.edmx</DependentUpon>
@@ -1707,7 +1705,6 @@
     <Content Include="js\popper.min.js" />
     <Content Include="Panel.aspx" />
     <Content Include="PreRegistro.aspx" />
-    <Content Include="PreRegistro.html" />
     <Content Include="RegistroInicial.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -1824,13 +1821,6 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Acceso.aspx.cs">
-      <DependentUpon>Acceso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Acceso.aspx.designer.cs">
-      <DependentUpon>Acceso.aspx</DependentUpon>
-    </Compile>
     <Compile Include="catMateria.cs">
       <DependentUpon>Intelimundo.tt</DependentUpon>
     </Compile>

@@ -16,9 +16,10 @@
           <Key>
             <PropertyRef Name="MateriaTemaID" />
           </Key>
-          <Property Name="MateriaTemaID" Type="int" Nullable="false" />
           <Property Name="MateriaTema" Type="varchar" MaxLength="100" />
           <Property Name="MateriaID" Type="int" />
+          <Property Name="MateriaOrdenID" Type="int" />
+          <Property Name="MateriaTemaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="catMateriaTemaPregunta">
           <Key>
@@ -1207,6 +1208,7 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
           <Property Name="MateriaTemaID" Type="Int32" Nullable="false" />
           <Property Name="MateriaTema" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MateriaID" Type="Int32" />
+          <Property Name="MateriaOrdenID" Type="Int32" />
         </EntityType>
         <EntityType Name="catMateriaTemaPregunta">
           <Key>
@@ -2458,6 +2460,7 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
           <EntitySetMapping Name="catMateriaTema">
             <EntityTypeMapping TypeName="db_imModel.catMateriaTema">
               <MappingFragment StoreEntitySet="catMateriaTema">
+                <ScalarProperty Name="MateriaOrdenID" ColumnName="MateriaOrdenID" />
                 <ScalarProperty Name="MateriaTemaID" ColumnName="MateriaTemaID" />
                 <ScalarProperty Name="MateriaTema" ColumnName="MateriaTema" />
                 <ScalarProperty Name="MateriaID" ColumnName="MateriaID" />

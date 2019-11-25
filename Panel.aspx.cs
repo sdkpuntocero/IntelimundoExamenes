@@ -9,7 +9,7 @@ namespace IntelimundoExamenes
     public partial class Panel : System.Web.UI.Page
     {
         public static Guid empf_ID = Guid.Empty, usr_ID = Guid.Empty;
-        public static int FiltroMateriaTemaID, FiltroMateriaTemaPreguntaID, FiltroPreguntaDiagnostico = 0, FiltroPreguntaDiagnosticoID;
+        public static int FiltroMateriaID = 0, FiltroMateriaTemaID, FiltroMateriaTemaPreguntaID, FiltroPreguntaDiagnostico = 0, FiltroPreguntaDiagnosticoID;
         public static DataSet ds;
         public static DataTable dtPreguntasDiagnostico, dtRespuestasDiagnostico, dtPreguntasCuestionario, dtRespuestasCuestionario;
 
@@ -22,6 +22,7 @@ namespace IntelimundoExamenes
                     try
                     {
                         UsuarioFiltrado();
+                        DatosMateriasTemas();
                     }
                     catch
                     {
@@ -30,7 +31,82 @@ namespace IntelimundoExamenes
             }
             catch
             {
-                Response.Redirect("acceso.aspx");
+                Response.Redirect("Default.aspx");
+            }
+        }
+
+        private void DatosMateriasTemas()
+        {
+            using (db_imEntities mMaterias = new db_imEntities())
+            {
+                var iMaterias = (from t1 in mMaterias.catMateria
+                                 select t1).ToList();
+
+                foreach (var iMater in iMaterias)
+                {
+                    switch (iMater.MateriaID)
+
+                    {
+                        case 1:
+
+                            lblMateria001.Text = "Biología";
+
+                            break;
+
+                        case 2:
+
+                            lblMateria002.Text = "Español";
+
+                            break;
+                        case 3:
+
+                            lblMateria003.Text = "Filosofía";
+
+                            break;
+                        case 4:
+
+                            lblMateria004.Text = "Física";
+
+                            break;
+                        case 5:
+
+                            lblMateria005.Text = "Geografía";
+
+                            break;
+                        case 6:
+
+                            lblMateria006.Text = "Historia De Mexico";
+
+                            break;
+                        case 7:
+
+                            lblMateria007.Text = "Historia Universal";
+
+                            break;
+                        case 8:
+
+                            lblMateria008.Text = "Literatura";
+
+                            break;
+                        case 9:
+
+                            lblMateria009.Text = "Matemáticas";
+
+                            break;
+                        case 10:
+
+                            lblMateria010.Text = "Química";
+
+                            break;
+
+                        case 0:
+
+
+
+                            break;
+                    }
+                }
+
             }
         }
 
@@ -62,9 +138,8 @@ namespace IntelimundoExamenes
 
                     lblNombreUsuario.Text = i_usuario.nombres;
                     lblNombreApellidos.Text = i_usuario.apaterno + " " + i_usuario.amaterno;
-                    lblNombreResumen.Text = i_usuario.nombres;
-                    lblApellidosResumen.Text = i_usuario.apaterno + " " + i_usuario.amaterno;
-                    lblCorporativo.Text = "Aula Fénix";
+               
+               
                 }
             }
             catch
@@ -95,7 +170,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 1
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -125,7 +200,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 1
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -155,7 +230,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 1
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -185,7 +260,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 1
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -215,7 +290,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 1
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -245,7 +320,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 1
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -275,7 +350,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 1
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -305,7 +380,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 1
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -339,7 +414,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -369,7 +444,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -399,7 +474,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -429,7 +504,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -459,7 +534,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -489,7 +564,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -519,7 +594,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -549,7 +624,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -579,7 +654,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -609,7 +684,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -639,7 +714,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -669,7 +744,7 @@ namespace IntelimundoExamenes
             {
                 var iMateria = (from a in mMateria.catMateriaTema
                                 where a.MateriaID == 2
-                                where a.MateriaTemaID == FiltroMateriaTemaID
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
@@ -695,129 +770,7 @@ namespace IntelimundoExamenes
 
         #endregion quimica
 
-        #region biologia
-
-        protected void lkbBioTema001_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema1/index.html";
-            lblTema.Text = "Ámbitos de estudio";
-
-            upTema.Update();
-        }
-
-        protected void lkbBioTema002_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema2/index.html";
-            lblTema.Text = "Células procariontes";
-
-            upTema.Update();
-        }
-
-        protected void lkbBioTema003_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema3/index.html";
-            lblTema.Text = "Células eucariotas";
-
-            upTema.Update();
-        }
-
-        protected void lkbBioTema004_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema4/index.html";
-            lblTema.Text = "Metabolismo celular";
-
-            upTema.Update();
-        }
-
-        protected void lkbBioTema005_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema5/index.html";
-            lblTema.Text = "Biomoléculas";
-
-            upTema.Update();
-        }
-
-        protected void lkbBioTema006_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema6/index.html";
-            lblTema.Text = "Bioquímica";
-
-            upTema.Update();
-        }
-
-        protected void lkbBioTema007_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema7/index.html";
-            lblTema.Text = "Ecología";
-
-            upTema.Update();
-        }
-
-        protected void lkbBioTema008_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema8/index.html";
-            lblTema.Text = "Respiración";
-
-            upTema.Update();
-        }
-
-        protected void lkbBioTema009_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema9/index.html";
-            lblTema.Text = "Reproducción";
-
-            upTema.Update();
-        }
-
-        protected void lkbBioTema010_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema10/index.html";
-            lblTema.Text = "Genética";
-
-            upTema.Update();
-        }
-
-        protected void lkbBioTema011_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema11/index.html";
-            lblTema.Text = "Origen de la vida";
-
-            upTema.Update();
-        }
-
-        protected void lkbBioTema012_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema12/index.html";
-            lblTema.Text = "Evolución";
-
-            upTema.Update();
-        }
-
-        #endregion biologia
+  
 
         #region geografia
 
@@ -913,109 +866,7 @@ namespace IntelimundoExamenes
 
         #endregion geografia
 
-        #region español
-
-        protected void lkbEspTema001_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
-            lblTema.Text = "Gramática: Comunicación";
-
-            upTema.Update();
-        }
-
-        protected void lkbEspTema002_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
-            lblTema.Text = "Oración simple";
-
-            upTema.Update();
-        }
-
-        protected void lkbEspTema003_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
-            lblTema.Text = "Oración compuesta";
-
-            upTema.Update();
-        }
-
-        protected void lkbEspTema004_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
-            lblTema.Text = "Verbos";
-
-            upTema.Update();
-        }
-
-        protected void lkbEspTema005_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
-            lblTema.Text = "Funciones de la lengua";
-
-            upTema.Update();
-        }
-
-        protected void lkbEspTema006_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
-            lblTema.Text = "Formas del discurso";
-
-            upTema.Update();
-        }
-
-        protected void lkbEspTema007_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
-            lblTema.Text = "Redacción";
-
-            upTema.Update();
-        }
-
-        protected void lkbEspTema008_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
-            lblTema.Text = "Ortográfia";
-
-            upTema.Update();
-        }
-
-        protected void lkbEspTema009_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
-            lblTema.Text = "Signos de puntuación";
-
-            upTema.Update();
-        }
-
-        protected void lkbEspTema010_Click(object sender, EventArgs e)
-        {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
-            lblTema.Text = "Fichas bibliográficas";
-
-            upTema.Update();
-        }
-
-        #endregion español
+  
 
         #region historiademexico
 
@@ -1423,7 +1274,7 @@ namespace IntelimundoExamenes
                         int intPunt = iPuntuacón.Count;
                         int intCal = (intPunt * 10) / 10;
 
-                        i97.Attributes["style"] = "color: green";
+                        //i97.Attributes["style"] = "color: green";
                         lblPuntuacion.Text = intCal.ToString();
 
                         cardDiagnostico.Visible = false;
@@ -1457,7 +1308,7 @@ namespace IntelimundoExamenes
                         cardResultado.Visible = true;
                         upResultado.Update();
                         upcardPreguntas.Update();
-                        upTema001.Update();
+                        upM002Tema001.Update();
                         upTema.Update();
                     }
 
@@ -1592,6 +1443,622 @@ namespace IntelimundoExamenes
         {
         }
 
+        #region Materia0001
+
+        protected void lkbM001Tema001_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema1/index.html";
+
+            FiltroMateriaTemaID = 1;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 1
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM001Tema002_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema2/index.html";
+
+            FiltroMateriaTemaID = 2;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 1
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM001Tema003_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema3/index.html";
+
+            FiltroMateriaTemaID = 3;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 1
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM001Tema004_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema4/index.html";
+
+            FiltroMateriaTemaID = 4;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 1
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM001Tema005_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema5/index.html";
+
+            FiltroMateriaTemaID = 5;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 1
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM001Tema006_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema6/index.html";
+
+            FiltroMateriaTemaID = 6;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 1
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM001Tema007_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema7/index.html";
+
+            FiltroMateriaTemaID = 7;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 1
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM001Tema008_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema8/index.html";
+
+            FiltroMateriaTemaID = 8;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 1
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM001Tema009_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema9/index.html";
+
+            FiltroMateriaTemaID = 9;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 1
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM001Tema010_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema10/index.html";
+
+            FiltroMateriaTemaID = 10;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 1
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+
+        #endregion Materia0001
+        #region Materia0002
+
+        protected void lkbM002Tema001_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = false;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
+
+            FiltroMateriaTemaID = 1;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 2
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM002Tema002_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema2/index.html";
+
+            FiltroMateriaTemaID = 2;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 2
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM002Tema003_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema3/index.html";
+
+            FiltroMateriaTemaID = 3;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 2
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM002Tema004_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema4/index.html";
+
+            FiltroMateriaTemaID = 4;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 2
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM002Tema005_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema5/index.html";
+
+            FiltroMateriaTemaID = 5;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 2
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM002Tema006_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema6/index.html";
+
+            FiltroMateriaTemaID = 6;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 2
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM002Tema007_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema7/index.html";
+
+            FiltroMateriaTemaID = 7;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 2
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM002Tema008_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema8/index.html";
+
+            FiltroMateriaTemaID = 8;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 2
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM002Tema009_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema9/index.html";
+
+            FiltroMateriaTemaID = 9;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 2
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+        protected void lkbM002Tema010_Click(object sender, EventArgs e)
+        {
+            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+            lblPuntuacion.Text = "0";
+
+            ebbokTema.Visible = true;
+            carComentario.Visible = true;
+            comment1.Value = string.Empty;
+            cardPreguntas.Visible = false;
+            cardResultado.Visible = false;
+            upResultado.Update();
+
+            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema10/index.html";
+
+            FiltroMateriaTemaID = 10;
+
+            using (db_imEntities mMateria = new db_imEntities())
+            {
+                var iMateria = (from a in mMateria.catMateriaTema
+                                where a.MateriaID == 2
+                                where a.MateriaOrdenID == FiltroMateriaTemaID
+                                select a
+                                   ).FirstOrDefault();
+
+                lblTema.Text = iMateria.MateriaTema;
+            }
+
+            upTema.Update();
+        }
+
+
+        #endregion Materia0002
+
+
+
+        protected void lkbMateria001_Click(object sender, EventArgs e)
+        {
+            FiltroMateriaID = 1;
+        }
+
         protected void gvResultados_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -1652,7 +2119,7 @@ namespace IntelimundoExamenes
 
                         int intPunt = iPuntuacón.Count;
                         int intCal = (intPunt * 10) / 10;
-                        i97.Attributes["style"] = "color: yellow";
+                        //i97.Attributes["style"] = "color: yellow";
 
                         lblPuntDiag.Text = intCal.ToString();
 
@@ -1688,7 +2155,7 @@ namespace IntelimundoExamenes
                         cardResultado.Visible = true;
                         upResultado.Update();
                         upcardPreguntas.Update();
-                        upTema001.Update();
+                        upM002Tema001.Update();
                         upTema.Update();
                     }
 
@@ -1877,8 +2344,8 @@ namespace IntelimundoExamenes
             btnDiagnostico.Visible = false;
             UpdatePanel8.Update();
             int PreguntaID;
-
-            dtPreguntasDiagnostico = GetTable(1, 10, 33, 1);
+            
+            dtPreguntasDiagnostico = GetTable(2, 1, FiltroMateriaTemaID, 1);
 
             DataRow[] foundRows;
             foundRows = dtPreguntasDiagnostico.Select("NuevoID = 1");

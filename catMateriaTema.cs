@@ -17,5 +17,6 @@ namespace IntelimundoExamenes
         public int MateriaTemaID { get; set; }
         public string MateriaTema { get; set; }
         public Nullable<int> MateriaID { get; set; }
+        public Nullable<int> MateriaOrdenID { get; set; }
     }
 }
