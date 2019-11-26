@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="Estilos/test.css" rel="stylesheet" />
     <script async data-id="22292" src="https://cdn.widgetwhats.com/script.min.js"></script>
 </head>
 
@@ -95,29 +96,18 @@
             </div>
         </div>
         <!--/ Modal box-->
-        <!--Banner-->
-        <div class="banner" id="banner">
-            <div class="bg-color">
-                <div class="container">
-                    <div class="row">
-                        <div class="banner-text text-center">
-                            <div class="text-border">
-                                <h2 class="text-dec">Aula / Intelimundo </h2>
-                            </div>
-                            <div class="intro-para text-center quote">
-                                <p class="big-text">¡La mejor plataforma para preparar tu examen!</p>
-                                <p class="small-text">¿Cómo funciona el Aula Fénix?</p>
-                                <a href="#footer" class="btn get-quote">Información</a>
-                            </div>
-                            <a href="#feature" class="mouse-hover">
-                                <div class="mouse"></div>
-                            </a>
-                        </div>
+        <header>
+            <div class="overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="Material/PROMO INTELIMINDO.mp4" type="video/mp4">
+            </video>
+            <div class="container h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                    <div class="w-100 text-white">
                     </div>
                 </div>
             </div>
-        </div>
-        <!--/ Banner-->
+        </header>
         <!--Feature-->
         <section id="feature" class="section-padding">
             <div class="container">
@@ -630,6 +620,7 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/custom.js"></script>
         <script src="contactform/contactform.js"></script>
+        
     </form>
 </body>
 

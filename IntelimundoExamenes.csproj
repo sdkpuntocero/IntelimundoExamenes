@@ -1668,6 +1668,7 @@
     <Content Include="Estilos\imagehover.min.css" />
     <Content Include="Estilos\Panel.css" />
     <Content Include="Estilos\style.css" />
+    <Content Include="Estilos\test.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Imagenes\ajax-loader.gif" />
     <Content Include="Imagenes\ico_ve.png" />
