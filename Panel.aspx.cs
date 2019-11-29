@@ -1460,11 +1460,12 @@ namespace IntelimundoExamenes
             iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema1/index.html";
 
             OrdenMateriaTemaID = 1;
+            FiltroMateriaID = 1;
 
             using (db_imEntities mMateria = new db_imEntities())
             {
                 var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == 1
+                                where a.MateriaID == FiltroMateriaID
                                 where a.MateriaOrdenID == OrdenMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
@@ -2391,7 +2392,7 @@ namespace IntelimundoExamenes
 
             using (db_imEntities mTema = new db_imEntities())
             {
-                var iRespuesta = (from c in mTema.RespuestasSP(10, 33, PreguntaID)
+                var iRespuesta = (from c in mTema.RespuestasSP(FiltroMateriaID, FiltroMateriaTemaID, PreguntaID)
                                   select c).ToList();
 
                 int f1 = 1;
