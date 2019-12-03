@@ -8,6 +8,7 @@
 
     <link href="Content/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet" />
     <link href="Estilos/Panel.css" rel="stylesheet" />
+    <link href="Estilos/circle.css" rel="stylesheet" />
 
     <script src="Scripts/jquery-3.4.1.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
@@ -106,8 +107,8 @@
 
                                             <i class="fas fa-square-root-alt"></i>
                                             <span>
-                                      
-                                                <asp:Label ID="lblMateria001" runat="server" ></asp:Label>
+
+                                                <asp:Label ID="lblMateria001" runat="server"></asp:Label>
                                             </span><i class="fa fa-circle" runat="server" id="iMateria001" style="color: #dc3545"></i>
                                         </a>
 
@@ -239,219 +240,219 @@
                                 </ContentTemplate>
                             </asp:UpdatePanel>
                             <li class="sidebar-dropdown">
-                           
-                                        <a href="#">
-                                            <i class="fas fa-square-root-alt"></i>
-                                            <span>
-                                                <asp:Label ID="lblMateria002" runat="server"></asp:Label>
-                                            </span><i class="fa fa-circle" runat="server" id="iMateria002" style="color: #dc3545"></i>
-                                        </a>
 
-                                        <div class="sidebar-submenu">
-                                            <ul>
-                                                <asp:UpdatePanel ID="upM002Tema001" runat="server" UpdateMode="Conditional">
-                                                    <ContentTemplate>
-                                                        <li>
+                                <a href="#">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <span>
+                                        <asp:Label ID="lblMateria002" runat="server"></asp:Label>
+                                    </span><i class="fa fa-circle" runat="server" id="iMateria002" style="color: #dc3545"></i>
+                                </a>
 
-                                                            <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema001" runat="server" OnClick="lkbM002Tema001_Click">
+                                <div class="sidebar-submenu">
+                                    <ul>
+                                        <asp:UpdatePanel ID="upM002Tema001" runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <li>
 
-                                                                <span>Tema 1
-                                                                </span><i class="fa fa-circle" runat="server" id="iM002Tema001" style="color: #dc3545"></i>
-                                                            </asp:LinkButton>
-                                                        </li>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                                <asp:UpdatePanel ID="upM002Tema002" runat="server" UpdateMode="Conditional">
-                                                    <ContentTemplate>
-                                                        <li>
+                                                    <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema001" runat="server" OnClick="lkbM002Tema001_Click">
 
-                                                            <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema002" runat="server" OnClick="lkbM002Tema002_Click">
+                                                        <span>Tema 1
+                                                        </span><i class="fa fa-circle" runat="server" id="iM002Tema001" style="color: #dc3545"></i>
+                                                    </asp:LinkButton>
+                                                </li>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        <asp:UpdatePanel ID="upM002Tema002" runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <li>
 
-                                                                <span>Tema 2
-                                                                </span><i class="fa fa-circle" runat="server" id="iM002Tema002" style="color: #dc3545"></i>
-                                                            </asp:LinkButton>
-                                                        </li>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                                <asp:UpdatePanel ID="upM002Tema003" runat="server" UpdateMode="Conditional">
-                                                    <ContentTemplate>
-                                                        <li>
+                                                    <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema002" runat="server" OnClick="lkbM002Tema002_Click">
 
-                                                            <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema003" runat="server" OnClick="lkbM002Tema003_Click">
+                                                        <span>Tema 2
+                                                        </span><i class="fa fa-circle" runat="server" id="iM002Tema002" style="color: #dc3545"></i>
+                                                    </asp:LinkButton>
+                                                </li>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        <asp:UpdatePanel ID="upM002Tema003" runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <li>
 
-                                                                <span>Tema 3
-                                                                </span><i class="fa fa-circle" runat="server" id="iM002Tema003" style="color: #dc3545"></i>
-                                                            </asp:LinkButton>
-                                                        </li>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                                <asp:UpdatePanel ID="upM002Tema004" runat="server" UpdateMode="Conditional">
-                                                    <ContentTemplate>
-                                                        <li>
+                                                    <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema003" runat="server" OnClick="lkbM002Tema003_Click">
 
-                                                            <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema004" runat="server" OnClick="lkbM002Tema004_Click">
+                                                        <span>Tema 3
+                                                        </span><i class="fa fa-circle" runat="server" id="iM002Tema003" style="color: #dc3545"></i>
+                                                    </asp:LinkButton>
+                                                </li>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        <asp:UpdatePanel ID="upM002Tema004" runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <li>
 
-                                                                <span>Tema 4
-                                                                </span><i class="fa fa-circle" runat="server" id="iM002Tema004" style="color: #dc3545"></i>
-                                                            </asp:LinkButton>
-                                                        </li>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                                <asp:UpdatePanel ID="upM002Tema005" runat="server" UpdateMode="Conditional">
-                                                    <ContentTemplate>
-                                                        <li>
+                                                    <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema004" runat="server" OnClick="lkbM002Tema004_Click">
 
-                                                            <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema005" runat="server" OnClick="lkbM002Tema005_Click">
+                                                        <span>Tema 4
+                                                        </span><i class="fa fa-circle" runat="server" id="iM002Tema004" style="color: #dc3545"></i>
+                                                    </asp:LinkButton>
+                                                </li>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        <asp:UpdatePanel ID="upM002Tema005" runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <li>
 
-                                                                <span>Tema 5
-                                                                </span><i class="fa fa-circle" runat="server" id="iM002Tema005" style="color: #dc3545"></i>
-                                                            </asp:LinkButton>
-                                                        </li>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                                <asp:UpdatePanel ID="upM002Tema006" runat="server" UpdateMode="Conditional">
-                                                    <ContentTemplate>
-                                                        <li>
+                                                    <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema005" runat="server" OnClick="lkbM002Tema005_Click">
 
-                                                            <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema006" runat="server" OnClick="lkbM002Tema006_Click">
+                                                        <span>Tema 5
+                                                        </span><i class="fa fa-circle" runat="server" id="iM002Tema005" style="color: #dc3545"></i>
+                                                    </asp:LinkButton>
+                                                </li>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        <asp:UpdatePanel ID="upM002Tema006" runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <li>
 
-                                                                <span>Tema 6
-                                                                </span><i class="fa fa-circle" runat="server" id="iM002Tema006" style="color: #dc3545"></i>
-                                                            </asp:LinkButton>
-                                                        </li>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                                <asp:UpdatePanel ID="upM002Tema007" runat="server" UpdateMode="Conditional">
-                                                    <ContentTemplate>
-                                                        <li>
+                                                    <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema006" runat="server" OnClick="lkbM002Tema006_Click">
 
-                                                            <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema007" runat="server" OnClick="lkbM002Tema007_Click">
+                                                        <span>Tema 6
+                                                        </span><i class="fa fa-circle" runat="server" id="iM002Tema006" style="color: #dc3545"></i>
+                                                    </asp:LinkButton>
+                                                </li>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        <asp:UpdatePanel ID="upM002Tema007" runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <li>
 
-                                                                <span>Tema 7
-                                                                </span><i class="fa fa-circle" runat="server" id="iM002Tema007" style="color: #dc3545"></i>
-                                                            </asp:LinkButton>
-                                                        </li>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                                <asp:UpdatePanel ID="upM002Tema008" runat="server" UpdateMode="Conditional">
-                                                    <ContentTemplate>
-                                                        <li>
+                                                    <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema007" runat="server" OnClick="lkbM002Tema007_Click">
 
-                                                            <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema008" runat="server" OnClick="lkbM002Tema008_Click">
+                                                        <span>Tema 7
+                                                        </span><i class="fa fa-circle" runat="server" id="iM002Tema007" style="color: #dc3545"></i>
+                                                    </asp:LinkButton>
+                                                </li>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        <asp:UpdatePanel ID="upM002Tema008" runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <li>
 
-                                                                <span>Tema 8
-                                                                </span><i class="fa fa-circle" runat="server" id="iM002Tema008" style="color: #dc3545"></i>
-                                                            </asp:LinkButton>
-                                                        </li>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                                <asp:UpdatePanel ID="upM002Tema009" runat="server" UpdateMode="Conditional">
-                                                    <ContentTemplate>
-                                                        <li>
+                                                    <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema008" runat="server" OnClick="lkbM002Tema008_Click">
 
-                                                            <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema009" runat="server" OnClick="lkbM002Tema009_Click">
+                                                        <span>Tema 8
+                                                        </span><i class="fa fa-circle" runat="server" id="iM002Tema008" style="color: #dc3545"></i>
+                                                    </asp:LinkButton>
+                                                </li>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        <asp:UpdatePanel ID="upM002Tema009" runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <li>
 
-                                                                <span>Tema 9
-                                                                </span><i class="fa fa-circle" runat="server" id="iM002Tema009" style="color: #dc3545"></i>
-                                                            </asp:LinkButton>
-                                                        </li>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                                <asp:UpdatePanel ID="upM002Tema0010" runat="server" UpdateMode="Conditional">
-                                                    <ContentTemplate>
-                                                        <li>
+                                                    <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema009" runat="server" OnClick="lkbM002Tema009_Click">
 
-                                                            <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema010" runat="server" OnClick="lkbM002Tema010_Click">
+                                                        <span>Tema 9
+                                                        </span><i class="fa fa-circle" runat="server" id="iM002Tema009" style="color: #dc3545"></i>
+                                                    </asp:LinkButton>
+                                                </li>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                        <asp:UpdatePanel ID="upM002Tema0010" runat="server" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <li>
 
-                                                                <span>Tema 10
-                                                                </span><i class="fa fa-circle" runat="server" id="iM002Tema010" style="color: #dc3545"></i>
-                                                            </asp:LinkButton>
-                                                        </li>
-                                                    </ContentTemplate>
-                                                </asp:UpdatePanel>
-                                            </ul>
-                                        </div>
-                            
+                                                    <asp:LinkButton CssClass="buttonClass" ID="lkbM002Tema010" runat="server" OnClick="lkbM002Tema010_Click">
+
+                                                        <span>Tema 10
+                                                        </span><i class="fa fa-circle" runat="server" id="iM002Tema010" style="color: #dc3545"></i>
+                                                    </asp:LinkButton>
+                                                </li>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </ul>
+                                </div>
+
                             </li>
                             <li class="sidebar-dropdown">
-                          
-                                        <a href="#">
-                                            <i class="fas fa-square-root-alt"></i>
-                                            <span>
-                                                <asp:Label ID="lblMateria003" runat="server"></asp:Label>
-                                            </span><i class="fa fa-circle" runat="server" id="iMateria003" style="color: #dc3545"></i>
-                                        </a>
-                          
+
+                                <a href="#">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <span>
+                                        <asp:Label ID="lblMateria003" runat="server"></asp:Label>
+                                    </span><i class="fa fa-circle" runat="server" id="iMateria003" style="color: #dc3545"></i>
+                                </a>
+
                             </li>
                             <li class="sidebar-dropdown">
-                          
-                                        <a href="#">
-                                            <i class="fas fa-square-root-alt"></i>
-                                            <span>
-                                                <asp:Label ID="lblMateria004" runat="server"></asp:Label>
-                                            </span><i class="fa fa-circle" runat="server" id="iMateria004" style="color: #dc3545"></i>
-                                        </a>
-                            
+
+                                <a href="#">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <span>
+                                        <asp:Label ID="lblMateria004" runat="server"></asp:Label>
+                                    </span><i class="fa fa-circle" runat="server" id="iMateria004" style="color: #dc3545"></i>
+                                </a>
+
                             </li>
                             <li class="sidebar-dropdown">
-                          
-                                        <a href="#">
-                                            <i class="fas fa-square-root-alt"></i>
-                                            <span>
-                                                <asp:Label ID="lblMateria005" runat="server"></asp:Label>
-                                            </span><i class="fa fa-circle" runat="server" id="iMateria005" style="color: #dc3545"></i>
-                                        </a>
-                               
+
+                                <a href="#">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <span>
+                                        <asp:Label ID="lblMateria005" runat="server"></asp:Label>
+                                    </span><i class="fa fa-circle" runat="server" id="iMateria005" style="color: #dc3545"></i>
+                                </a>
+
                             </li>
                             <li class="sidebar-dropdown">
-                          
-                                        <a href="#">
-                                            <i class="fas fa-square-root-alt"></i>
-                                            <span>
-                                                <asp:Label ID="lblMateria006" runat="server"></asp:Label>
-                                            </span><i class="fa fa-circle" runat="server" id="iMateria006" style="color: #dc3545"></i>
-                                        </a>
-                               
+
+                                <a href="#">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <span>
+                                        <asp:Label ID="lblMateria006" runat="server"></asp:Label>
+                                    </span><i class="fa fa-circle" runat="server" id="iMateria006" style="color: #dc3545"></i>
+                                </a>
+
                             </li>
                             <li class="sidebar-dropdown">
-                             
-                                        <a href="#">
-                                            <i class="fas fa-square-root-alt"></i>
-                                            <span>
-                                                <asp:Label ID="lblMateria007" runat="server"></asp:Label>
-                                            </span><i class="fa fa-circle" runat="server" id="iMateria007" style="color: #dc3545"></i>
-                                        </a>
-                               
+
+                                <a href="#">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <span>
+                                        <asp:Label ID="lblMateria007" runat="server"></asp:Label>
+                                    </span><i class="fa fa-circle" runat="server" id="iMateria007" style="color: #dc3545"></i>
+                                </a>
+
                             </li>
                             <li class="sidebar-dropdown">
-                           
-                                        <a href="#">
-                                            <i class="fas fa-square-root-alt"></i>
-                                            <span>
-                                                <asp:Label ID="lblMateria008" runat="server"></asp:Label>
-                                            </span><i class="fa fa-circle" runat="server" id="iMateria008" style="color: #dc3545"></i>
-                                        </a>
-                                  
+
+                                <a href="#">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <span>
+                                        <asp:Label ID="lblMateria008" runat="server"></asp:Label>
+                                    </span><i class="fa fa-circle" runat="server" id="iMateria008" style="color: #dc3545"></i>
+                                </a>
+
                             </li>
                             <li class="sidebar-dropdown">
-                         
-                                        <a href="#">
-                                            <i class="fas fa-square-root-alt"></i>
-                                            <span>
-                                                <asp:Label ID="lblMateria009" runat="server"></asp:Label>
-                                            </span><i class="fa fa-circle" runat="server" id="iMateria009" style="color: #dc3545"></i>
-                                        </a>
-                                
+
+                                <a href="#">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <span>
+                                        <asp:Label ID="lblMateria009" runat="server"></asp:Label>
+                                    </span><i class="fa fa-circle" runat="server" id="iMateria009" style="color: #dc3545"></i>
+                                </a>
+
                             </li>
                             <li class="sidebar-dropdown">
-                          
-                                        <a href="#">
-                                            <i class="fas fa-square-root-alt"></i>
-                                            <span>
-                                                <asp:Label ID="lblMateria010" runat="server"></asp:Label>
-                                            </span><i class="fa fa-circle" runat="server" id="iMateria010" style="color: #dc3545"></i>
-                                        </a>
-                                 
+
+                                <a href="#">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <span>
+                                        <asp:Label ID="lblMateria010" runat="server"></asp:Label>
+                                    </span><i class="fa fa-circle" runat="server" id="iMateria010" style="color: #dc3545"></i>
+                                </a>
+
                             </li>
 
                             <li class="header-menu">
@@ -517,62 +518,66 @@
                                 <div class="container" id="divResumen" runat="server">
                                     <hr>
                                     <div class="row">
-                                        <div class="col-md-6 col-sm-6">
-                                         
+                                        <div class="col-md-8 col-sm-8">
                                         </div>
-                                        <div class="col-md-6 col-sm-6">
-                                         
+                                        <div class="col-md-2 col-sm-2 center">
+                                            <h6>Aprovechamiento </h6>
 
-                                            <!-- Progress bar 1 -->
-                                            <div class="progress mx-auto" data-value='80'>
-                                                <span class="progress-left">
-                                                    <span class="progress-bar border-primary"></span>
-                                                </span>
-                                                <span class="progress-right">
-                                                    <span class="progress-bar border-primary"></span>
-                                                </span>
-                                                <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                                                    <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+                                            <div class="c100 p85 green">
+                                                <span>85%</span>
+                                                <div class="slice">
+                                                    <div class="bar"></div>
+                                                    <div class="fill"></div>
                                                 </div>
                                             </div>
-                                            <!-- END -->
+                                        </div>
+                                        <div class="col-md-2 col-sm-2 center">
+
+                                            <h6>Área de Oportunidad </h6>
+                                            <div class="c100 p15 red">
+                                                <span>15%</span>
+                                                <div class="slice">
+                                                    <div class="bar"></div>
+                                                    <div class="fill"></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
                                     <hr>
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
-                                            <h2>Cuestionarios de Diagnosticos</h2>
+                                            <h2>Cuestionarios de Diagnostico</h2>
                                             <hr>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">Biología 35%</div>
+                                                <div class="progress-bar progress-bar progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">Biología 35%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">Español 45%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">Español 45%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">Filosofía 70%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">Filosofía 70%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">Física 60%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">Física 60%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">Geografía 55%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">Geografía 55%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">Historia de México 30%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">Historia de México 30%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">Historia Universal 85%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">Historia Universal 85%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">Literatura 40%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">Literatura 40%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">Matemáticas 65%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">Matemáticas 65%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">Química 20%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">Química 20%</div>
                                             </div>
                                             <br>
                                         </div>
@@ -580,34 +585,34 @@
                                             <h2>Cuestionarios de Evaluación</h2>
                                             <hr>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">Biología 55%</div>
+                                                <div class="progress-bar progress-bar progress-bar " role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">Biología 55%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">Español 65%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-info" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">Español 65%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">Filosofía 90%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">Filosofía 90%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">Física 80%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">Física 80%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">Geografía 75%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">Geografía 75%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">Historia de México 60%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">Historia de México 60%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">Historia Universal 75%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">Historia Universal 75%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">Literatura 85%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">Literatura 85%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">Matemáticas 70%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">Matemáticas 70%</div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">Química 45%</div>
+                                                <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">Química 45%</div>
                                             </div>
                                         </div>
                                     </div>
@@ -645,7 +650,7 @@
                                                                     <h5 class="card-title">
                                                                         <asp:Label ID="lblTema" runat="server" Text=""></asp:Label></h5>
                                                                     <p class="card-text">Instrucciones</p>
-                                                                    <p class="card-text"><small class="text-muted">* <strong>Primero: </strong>Debes escuchar con atenci[on tu video clase, la puedes pausar y ver las veces que sean necesarias</p>
+                                                                    <p class="card-text"><small class="text-muted">* <strong>Primero: </strong>Debes escuchar con atención tu vídeo clase, la puedes pausar y ver las veces que sean necesarias</p>
                                                                     </small>
                                                             <p class="card-text"><small class="text-muted"><a>* <strong>Segundo: </strong>Toma apuntes, serán importantes para realizar tus evaluaciones o cuestionarios</a></small></p>
                                                                     <br />
@@ -752,8 +757,8 @@
                                                                     <p class="card-text"><small class="text-muted">* <strong>Primero: </strong>Debes de leer con atención tu Ebook y tomar apuntes que serán necesarios para la realización de tu síntesis</p>
                                                                     </small>
                                                             <p class="card-text">
-                                                                <small class="text-muted"><a>* <strong>Segundo: </strong>Tu síntesis debe ser de un mínimo de 1800 caractereres equivalente a un poco mas de media cuartilla</a></small>
-                                                                <small class="text-muted"><a><strong>¡ Recuerda ! </strong>Sólo puedes realizar una vez el cuestionario de cada tema, asi que toma apuntes... te servirán de repaso.</a></small>
+                                                                <small class="text-muted"><a>* <strong>Segundo: </strong>Tu síntesis debe ser de un mínimo de 1800 caracteres equivalente a un poco mas de media cuartilla</a></small>
+                                                                <small class="text-muted"><a><strong>¡ Recuerda ! </strong>Sólo puedes realizar una vez el cuestionario de cada tema, así que toma apuntes... te servirán de repaso.</a></small>
                                                             </p>
                                                                     <br />
                                                                 </div>

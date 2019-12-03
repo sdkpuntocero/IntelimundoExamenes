@@ -1664,6 +1664,7 @@
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
     <Content Include="Estilos\Acceso.css" />
+    <Content Include="Estilos\circle.css" />
     <Content Include="Estilos\Ecuaciones.css" />
     <Content Include="Estilos\imagehover.min.css" />
     <Content Include="Estilos\Panel.css" />

@@ -2348,6 +2348,7 @@ namespace IntelimundoExamenes
 
                 dtfrd.Columns.Add("NuevoID", typeof(int));
                 dtfrd.Columns.Add("Respuesta", typeof(string));
+
                 dtfrd.Columns.Add("PreguntaID", typeof(int));
 
                 using (db_imEntities mTema = new db_imEntities())
