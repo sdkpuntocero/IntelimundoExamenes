@@ -25,30 +25,31 @@
           <Key>
             <PropertyRef Name="MateriaTemaPreguntaID" />
           </Key>
-          <Property Name="MateriaTemaPreguntaID" Type="int" Nullable="false" />
           <Property Name="TipoPreguntaID" Type="int" />
           <Property Name="MateriaTemaPregunta" Type="varchar" MaxLength="350" />
           <Property Name="MateriaTemaID" Type="int" />
+          <Property Name="MateriaTemaPreguntaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="catMateriaTemaPreguntaRespuesta">
           <Key>
             <PropertyRef Name="MateriaTemaPreguntaRespuestaID" />
           </Key>
-          <Property Name="MateriaTemaPreguntaRespuestaID" Type="int" Nullable="false" />
           <Property Name="MateriaTemaPreguntaRespuesta" Type="varchar(max)" />
           <Property Name="Respuesta" Type="bit" />
-          <Property Name="Justificacion" Type="varchar(max)" />
           <Property Name="MateriaTemaPreguntaID" Type="int" />
+          <Property Name="Justificacion" Type="varchar(max)" />
+          <Property Name="MateriaTemaPreguntaRespuestaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="catMateriaTemaPreguntaRespuestaBitacora">
           <Key>
             <PropertyRef Name="MateriaTemaPreguntaRespuestaBitacoraID" />
           </Key>
-          <Property Name="MateriaTemaPreguntaRespuestaBitacoraID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoPreguntaID" Type="int" />
           <Property Name="MateriaTemaPreguntaRespuestaID" Type="int" />
           <Property Name="UsuarioID" Type="uniqueidentifier" />
           <Property Name="FechaRegistro" Type="date" />
           <Property Name="MateriaTemaPreguntaID" Type="int" />
+          <Property Name="MateriaTemaPreguntaRespuestaBitacoraID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="catMateriaTemaSintesis">
           <Key>
@@ -1238,6 +1239,7 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
           <Property Name="UsuarioID" Type="Guid" />
           <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
           <Property Name="MateriaTemaPreguntaID" Type="Int32" />
+          <Property Name="TipoPreguntaID" Type="Int32" />
         </EntityType>
         <EntityType Name="catMateriaTemaSintesis">
           <Key>
@@ -2491,6 +2493,7 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
           <EntitySetMapping Name="catMateriaTemaPreguntaRespuestaBitacora">
             <EntityTypeMapping TypeName="db_imModel.catMateriaTemaPreguntaRespuestaBitacora">
               <MappingFragment StoreEntitySet="catMateriaTemaPreguntaRespuestaBitacora">
+                <ScalarProperty Name="TipoPreguntaID" ColumnName="TipoPreguntaID" />
                 <ScalarProperty Name="MateriaTemaPreguntaRespuestaBitacoraID" ColumnName="MateriaTemaPreguntaRespuestaBitacoraID" />
                 <ScalarProperty Name="MateriaTemaPreguntaRespuestaID" ColumnName="MateriaTemaPreguntaRespuestaID" />
                 <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />

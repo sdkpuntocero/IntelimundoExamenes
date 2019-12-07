@@ -852,6 +852,24 @@ namespace IntelimundoExamenes
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divResumen;
 
         /// <summary>
+        /// Control divMat001R.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMat001R;
+
+        /// <summary>
+        /// Control lblMat001R.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMat001R;
+
+        /// <summary>
         /// Control upTema.
         /// </summary>
         /// <remarks>
@@ -1104,13 +1122,13 @@ namespace IntelimundoExamenes
         protected global::System.Web.UI.WebControls.Label lblRespDiagID004;
 
         /// <summary>
-        /// Control UpdatePanel8.
+        /// Control upGuardaDiagnostico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel8;
+        protected global::System.Web.UI.UpdatePanel upGuardaDiagnostico;
 
         /// <summary>
         /// Control btnGuardaDiagnostico.
@@ -1122,13 +1140,13 @@ namespace IntelimundoExamenes
         protected global::System.Web.UI.WebControls.Button btnGuardaDiagnostico;
 
         /// <summary>
-        /// Control UpdateProgress2.
+        /// Control upCarga.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgress2;
+        protected global::System.Web.UI.UpdateProgress upCarga;
 
         /// <summary>
         /// Control ebbokTema.

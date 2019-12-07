@@ -550,7 +550,7 @@
                                             <h2>Cuestionarios de Diagnostico</h2>
                                             <hr>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%">Biología 35%</div>
+                                                <div class="progress-bar progress-bar progress-bar" role="progressbar"  aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat001R" ><asp:Label ID="lblMat001R" runat="server" Font-Size="Smaller"></asp:Label></div>
                                             </div>
                                             <div class="progress mt-4">
                                                 <div class="progress-bar progress-bar progress-bar bg-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">Español 45%</div>
@@ -722,12 +722,12 @@
                                                                 </div>
                                                             </div>
 
-                                                            <asp:UpdatePanel ID="UpdatePanel8" runat="server" UpdateMode="Conditional">
+                                                            <asp:UpdatePanel ID="upGuardaDiagnostico" runat="server" UpdateMode="Conditional">
                                                                 <ContentTemplate>
                                                                     <asp:Button CssClass="btn btn-secondary" aling="right" ID="btnGuardaDiagnostico" runat="server" Text="Guardar" TabIndex="18" OnClick="btnGuardaDiagnostico_Click" />
                                                                 </ContentTemplate>
                                                             </asp:UpdatePanel>
-                                                            <asp:UpdateProgress ID="UpdateProgress2" runat="server" DynamicLayout="true">
+                                                            <asp:UpdateProgress ID="upCarga" runat="server" DynamicLayout="true">
                                                                 <ProgressTemplate>
                                                                     <div id="overlay">
                                                                         <div class="center">
@@ -740,7 +740,7 @@
                                                     </div>
                                                 </ContentTemplate>
                                             </asp:UpdatePanel>
-                                            <div class="card mb-12" runat="server" id="ebbokTema">
+                                            <div class="card mb-12" runat="server" id="ebbokTema" visible="false">
                                                 <div class="row no-gutters">
                                                     <div class="col-md-4">
 
