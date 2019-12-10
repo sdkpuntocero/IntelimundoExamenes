@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Intelimundo - Aula Fénix</title>
+    <title>Aula / Intelimundo</title>
     <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="Estilos/test.css" rel="stylesheet" />
+    <link href="Estilos/Video.css" rel="stylesheet" />
     <script async data-id="22292" src="https://cdn.widgetwhats.com/script.min.js"></script>
 </head>
 

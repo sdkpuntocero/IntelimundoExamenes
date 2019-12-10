@@ -20,10 +20,7 @@ namespace IntelimundoExamenes
         }
         private void Mensaje(string contenido)
         {
-            lblModalTitle.Text = "Intelimundo";
-            lblModalBody.Text = contenido;
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "login", "$('#login').modal();", true);
-            upModal.Update();
+           
         }
     }
 }

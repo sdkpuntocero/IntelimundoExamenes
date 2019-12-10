@@ -1,10 +1,19 @@
 ﻿.hideGridColumn {
     display: none;
 }
+
 .center {
     margin-left: auto;
     margin-right: auto;
     display: block
+}
+
+.jumbotron {
+    background-color: lightyellow;
+}
+
+.card {
+    background-color: lightyellow;
 }
 
 @keyframes swing {
@@ -59,6 +68,7 @@
 
 body {
     font-size: 0.9rem;
+    background-color: lightyellow;
 }
 
 .page-wrapper .sidebar-wrapper,
@@ -540,6 +550,3 @@ table tr th {
 .GridHeader {
     text-align: center !important;
 }
-
-
-
