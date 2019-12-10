@@ -372,7 +372,6 @@
                                         </asp:UpdatePanel>
                                     </ul>
                                 </div>
-
                             </li>
                             <li class="sidebar-dropdown">
 
@@ -382,7 +381,6 @@
                                         <asp:Label ID="lblMateria003" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria003" style="color: #dc3545"></i>
                                 </a>
-
                             </li>
                             <li class="sidebar-dropdown">
 
@@ -392,7 +390,6 @@
                                         <asp:Label ID="lblMateria004" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria004" style="color: #dc3545"></i>
                                 </a>
-
                             </li>
                             <li class="sidebar-dropdown">
 
@@ -402,7 +399,6 @@
                                         <asp:Label ID="lblMateria005" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria005" style="color: #dc3545"></i>
                                 </a>
-
                             </li>
                             <li class="sidebar-dropdown">
 
@@ -412,7 +408,6 @@
                                         <asp:Label ID="lblMateria006" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria006" style="color: #dc3545"></i>
                                 </a>
-
                             </li>
                             <li class="sidebar-dropdown">
 
@@ -422,7 +417,6 @@
                                         <asp:Label ID="lblMateria007" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria007" style="color: #dc3545"></i>
                                 </a>
-
                             </li>
                             <li class="sidebar-dropdown">
 
@@ -432,7 +426,6 @@
                                         <asp:Label ID="lblMateria008" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria008" style="color: #dc3545"></i>
                                 </a>
-
                             </li>
                             <li class="sidebar-dropdown">
 
@@ -442,7 +435,6 @@
                                         <asp:Label ID="lblMateria009" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria009" style="color: #dc3545"></i>
                                 </a>
-
                             </li>
                             <li class="sidebar-dropdown">
 
@@ -452,7 +444,6 @@
                                         <asp:Label ID="lblMateria010" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria010" style="color: #dc3545"></i>
                                 </a>
-
                             </li>
 
                             <li class="header-menu">
@@ -550,7 +541,8 @@
                                             <h2>Cuestionarios de Diagnostico</h2>
                                             <hr>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar progress-bar" role="progressbar"  aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat001R" ><asp:Label ID="lblMat001R" runat="server" Font-Size="Smaller"></asp:Label></div>
+                                                <div class="progress-bar progress-bar progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat001R">
+                                                    <asp:Label ID="lblMat001R" runat="server" Font-Size="Smaller"></asp:Label></div>
                                             </div>
                                             <div class="progress mt-4">
                                                 <div class="progress-bar progress-bar progress-bar bg-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">Español 45%</div>

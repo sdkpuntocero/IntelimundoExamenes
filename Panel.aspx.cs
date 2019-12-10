@@ -1243,40 +1243,74 @@ namespace IntelimundoExamenes
 
         protected void lkbM001Tema001_Click(object sender, EventArgs e)
         {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-            lblPuntuacion.Text = "0";
+            if (EstatusTemas(FiltroMateriaID, FiltroMateriaTemaID))
+            {
+                divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+                lblPuntuacion.Text = "0";
+                lblPuntDiag.Text = "0";
 
-            carComentario.Visible = false;
-            comment1.Value = string.Empty;
-            cardPreguntas.Visible = false;
-            cardResultado.Visible = false;
-            upResultado.Update();
+                carComentario.Visible = false;
+                comment1.Value = string.Empty;
+                cardPreguntas.Visible = false;
+                cardResultado.Visible = false;
+                upResultado.Update();
 
-            iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema1/index.html";
+                iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema1/index.html";
 
-            OrdenMateriaTemaID = 1;
-            FiltroMateriaID = 1;
+                OrdenMateriaTemaID = 1;
+                FiltroMateriaID = 1;
 
+                using (db_imEntities mMateria = new db_imEntities())
+                {
+                    var iMateria = (from a in mMateria.catMateriaTema
+                                    where a.MateriaID == FiltroMateriaID
+                                    where a.MateriaOrdenID == OrdenMateriaTemaID
+                                    select a
+                                       ).FirstOrDefault();
+
+                    lblTema.Text = iMateria.MateriaTema;
+                    FiltroMateriaTemaID = iMateria.MateriaTemaID;
+                }
+
+                ebbokTema.Visible = false;
+                btnDiagnostico.Visible = true;
+            }
+            else
+            {
+                iM001Tema001.Attributes["style"] = "color: green";
+            }
+
+            upTema.Update();
+        }
+
+        private bool EstatusTemas(int MateriaID, int MateriaTemaID)
+        {
             using (db_imEntities mMateria = new db_imEntities())
             {
-                var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == FiltroMateriaID
-                                where a.MateriaOrdenID == OrdenMateriaTemaID
+                var iMateria = (from a in mMateria.catMateriaTemaPreguntaRespuestaBitacora
+                                join b in mMateria.catMateriaTemaPreguntaRespuesta on a.MateriaTemaPreguntaRespuestaID equals b.MateriaTemaPreguntaRespuestaID
+                                join c in mMateria.catMateriaTemaPregunta on b.MateriaTemaPreguntaID equals c.MateriaTemaPreguntaID
+                                join d in mMateria.catMateriaTema on c.MateriaTemaID equals d.MateriaTemaID
+                                where d.MateriaID == MateriaID
+                                where c.MateriaTemaID == MateriaTemaID
                                 select a
-                                   ).FirstOrDefault();
-
-                lblTema.Text = iMateria.MateriaTema;
-                FiltroMateriaTemaID = iMateria.MateriaTemaID;
+                                   ).ToList();
+                if (iMateria.Count == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            ebbokTema.Visible = false;
-            btnDiagnostico.Visible = true;
-            upTema.Update();
         }
 
         protected void lkbM001Tema002_Click(object sender, EventArgs e)
         {
             divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
             lblPuntuacion.Text = "0";
+            lblPuntDiag.Text = "0";
 
             carComentario.Visible = false;
             comment1.Value = string.Empty;
@@ -1308,6 +1342,7 @@ namespace IntelimundoExamenes
         {
             divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
             lblPuntuacion.Text = "0";
+            lblPuntDiag.Text = "0";
 
             carComentario.Visible = false;
             comment1.Value = string.Empty;
@@ -1339,7 +1374,7 @@ namespace IntelimundoExamenes
         {
             divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
             lblPuntuacion.Text = "0";
-
+            lblPuntDiag.Text = "0";
             carComentario.Visible = false;
             comment1.Value = string.Empty;
             cardPreguntas.Visible = false;
@@ -1370,7 +1405,7 @@ namespace IntelimundoExamenes
         {
             divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
             lblPuntuacion.Text = "0";
-
+            lblPuntDiag.Text = "0";
             carComentario.Visible = false;
             comment1.Value = string.Empty;
             cardPreguntas.Visible = false;
@@ -1401,7 +1436,7 @@ namespace IntelimundoExamenes
         {
             divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
             lblPuntuacion.Text = "0";
-
+            lblPuntDiag.Text = "0";
             carComentario.Visible = false;
             comment1.Value = string.Empty;
             cardPreguntas.Visible = false;
@@ -1432,7 +1467,7 @@ namespace IntelimundoExamenes
         {
             divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
             lblPuntuacion.Text = "0";
-
+            lblPuntDiag.Text = "0";
             carComentario.Visible = false;
             comment1.Value = string.Empty;
             cardPreguntas.Visible = false;
@@ -1463,7 +1498,7 @@ namespace IntelimundoExamenes
         {
             divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
             lblPuntuacion.Text = "0";
-
+            lblPuntDiag.Text = "0";
             carComentario.Visible = false;
             comment1.Value = string.Empty;
             cardPreguntas.Visible = false;
@@ -1494,7 +1529,7 @@ namespace IntelimundoExamenes
         {
             divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
             lblPuntuacion.Text = "0";
-
+            lblPuntDiag.Text = "0";
             carComentario.Visible = false;
             comment1.Value = string.Empty;
             cardPreguntas.Visible = false;
@@ -1525,7 +1560,7 @@ namespace IntelimundoExamenes
         {
             divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
             lblPuntuacion.Text = "0";
-
+            lblPuntDiag.Text = "0";
             carComentario.Visible = false;
             comment1.Value = string.Empty;
             cardPreguntas.Visible = false;
@@ -1975,11 +2010,9 @@ namespace IntelimundoExamenes
             {
                 string filtro;
                 int PreguntaID;
-      
 
                 if (FiltroPreguntaDiagnostico == 5)
                 {
-              
                     if (rbRespDiag001.Checked == true || rbRespDiag002.Checked == true || rbRespDiag003.Checked == true || rbRespDiag004.Checked == true)
                     {
                         int intRespuesta = 0;
@@ -1999,7 +2032,7 @@ namespace IntelimundoExamenes
                         {
                             intRespuesta = int.Parse(lblRespDiagID004.Text);
                         }
-             
+
                         using (db_imEntities mMateria = new db_imEntities())
                         {
                             var iRespuesta = (from a in mMateria.catMateriaTemaPreguntaRespuesta
