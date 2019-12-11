@@ -976,6 +976,19 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
           <Parameter Name="MateriaTemaIDFiltro" Type="int" Mode="In" />
           <Parameter Name="MateriaTemaPreguntaIDFiltro" Type="int" Mode="In" />
         </Function>
+        <Function Name="tblPreguntasRespuestas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UsuarioFiltrado" Type="uniqueidentifier" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="MateriaID" Type="int" />
+                <Property Name="Tipo" Type="int" Nullable="false" />
+                <Property Name="TipoPreguntaID" Type="int" />
+                <Property Name="Preguntas" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <EntityContainer Name="db_imModelStoreContainer">
           <EntitySet Name="catMateria" EntityType="Self.catMateria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="catMateriaTema" EntityType="Self.catMateriaTema" Schema="dbo" store:Type="Tables" />
@@ -2434,6 +2447,9 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
             <Parameter Name="MateriaTemaIDFiltro" Mode="In" Type="Int32" />
             <Parameter Name="MateriaTemaPreguntaIDFiltro" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="tblPreguntasRespuestas" IsComposable="true" ReturnType="Collection(db_imModel.tblPreguntasRespuestas_Result)">
+            <Parameter Name="UsuarioFiltrado" Mode="In" Type="Guid" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="PreguntasSP_Result">
           <Property Type="Int64" Name="NuevoID" Nullable="true" />
@@ -2444,6 +2460,12 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
           <Property Type="Int64" Name="NuevoID" Nullable="true" />
           <Property Type="String" Name="MateriaTemaPreguntaRespuesta" Nullable="true" />
           <Property Type="Int32" Name="MateriaTemaPreguntaRespuestaID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="tblPreguntasRespuestas_Result">
+          <Property Type="Int32" Name="MateriaID" Nullable="true" />
+          <Property Type="Int32" Name="Tipo" Nullable="false" />
+          <Property Type="Int32" Name="TipoPreguntaID" Nullable="true" />
+          <Property Type="Int32" Name="Preguntas" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3027,6 +3049,16 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
                 <ScalarProperty Name="NuevoID" ColumnName="NuevoID" />
                 <ScalarProperty Name="MateriaTemaPreguntaRespuesta" ColumnName="MateriaTemaPreguntaRespuesta" />
                 <ScalarProperty Name="MateriaTemaPreguntaRespuestaID" ColumnName="MateriaTemaPreguntaRespuestaID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="tblPreguntasRespuestas" FunctionName="db_imModel.Store.tblPreguntasRespuestas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_imModel.tblPreguntasRespuestas_Result">
+                <ScalarProperty Name="MateriaID" ColumnName="MateriaID" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="TipoPreguntaID" ColumnName="TipoPreguntaID" />
+                <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

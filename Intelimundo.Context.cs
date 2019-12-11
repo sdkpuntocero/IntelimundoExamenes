@@ -108,5 +108,15 @@ namespace IntelimundoExamenes
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RespuestasSP_Result>("RespuestasSP", materiaIDFiltroParameter, materiaTemaIDFiltroParameter, materiaTemaPreguntaIDFiltroParameter);
         }
+    
+        [DbFunction("db_imEntities", "tblPreguntasRespuestas")]
+        public virtual IQueryable<tblPreguntasRespuestas_Result> tblPreguntasRespuestas(Nullable<System.Guid> usuarioFiltrado)
+        {
+            var usuarioFiltradoParameter = usuarioFiltrado.HasValue ?
+                new ObjectParameter("UsuarioFiltrado", usuarioFiltrado) :
+                new ObjectParameter("UsuarioFiltrado", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<tblPreguntasRespuestas_Result>("[db_imEntities].[tblPreguntasRespuestas](@UsuarioFiltrado)", usuarioFiltradoParameter);
+        }
     }
 }

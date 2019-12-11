@@ -2011,6 +2011,9 @@
     <Compile Include="RespuestasSP_Result.cs">
       <DependentUpon>Intelimundo.tt</DependentUpon>
     </Compile>
+    <Compile Include="tblPreguntasRespuestas_Result.cs">
+      <DependentUpon>Intelimundo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

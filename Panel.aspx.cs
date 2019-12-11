@@ -9,7 +9,7 @@ namespace IntelimundoExamenes
     public partial class Panel : System.Web.UI.Page
     {
         public static Guid empf_ID = Guid.Empty, usr_ID = Guid.Empty;
-        public static int FiltroMateriaID = 0, OrdenMateriaTemaID, FiltroMateriaTemaID, FiltroMateriaTemaPreguntaID, FiltroPreguntaDiagnostico = 0, FiltroPreguntaDiagnosticoID, FiltroPreguntaTest = 0;
+        public static int FiltroMateriaID = 0, OrdenMateriaTemaID = 0, FiltroMateriaTemaID = 0, FiltroMateriaTemaPreguntaID = 0, FiltroPreguntaDiagnostico = 0, FiltroPreguntaDiagnosticoID = 0, FiltroPreguntaTest = 0;
         public static DataSet ds;
         public static DataTable dtPreguntasDiagnostico, dtRespuestasDiagnostico, dtPreguntasCuestionario, dtRespuestasCuestionario;
 
@@ -41,6 +41,11 @@ namespace IntelimundoExamenes
             {
                 var iMaterias = (from t1 in mMaterias.catMateria
                                  select t1).ToList();
+                int EstatusMAteria = 0;
+                int Materia001TD = 0;
+                int Materia001TC = 0;
+                string Materia001D;
+                string Materia001C;
 
                 foreach (var iMater in iMaterias)
                 {
@@ -50,8 +55,102 @@ namespace IntelimundoExamenes
                         case 1:
 
                             lblMateria001.Text = "Biología";
-                            divMat001D.Attributes["style"] = "width: 40%";
-                            lblMat001D.Text = "Biología 40%";
+                     
+
+                            using (db_imEntities mRespuestas = new db_imEntities())
+                            {
+                                var iRespuestas = (from i_u in mRespuestas.tblPreguntasRespuestas(usr_ID)
+                                                 where i_u.MateriaID == 1
+                                                 select i_u).ToList();
+
+                                if (iRespuestas.Count == 0)
+                                {
+
+                                }
+                                else
+                                {
+                                    Materia001TD = (iRespuestas[2].Preguntas.Value * 100) / iRespuestas[0].Preguntas.Value;
+                                    Materia001TC = (iRespuestas[3].Preguntas.Value * 100) / iRespuestas[1].Preguntas.Value; 
+                                }
+
+                            }
+                            Materia001D = "width: " + Materia001TD.ToString() + "%";
+                          
+                            divMat001D.Attributes["style"] = Materia001D;
+                            lblMat001D.Text = "Biología " + Materia001D.Replace("width: ","");
+
+                            Materia001C = "width: " + Materia001TC.ToString() + "%";
+                        
+                            divMat001C.Attributes["style"] = Materia001C;
+                            lblMat001C.Text = "Biología " + Materia001C.Replace("width: ", "");
+
+                            if (EstatusTemas(1, 1) == false)
+                            {
+                                EstatusMAteria += 1;
+
+                                iM001Tema001.Attributes["style"] = "color: green";
+                            }
+                            if (EstatusTemas(1,2) == false)
+                            {
+                                EstatusMAteria += 1;
+                                iM001Tema002.Attributes["style"] = "color: green";
+                            }
+                            if (EstatusTemas(1, 3) == false)
+                            {
+                                EstatusMAteria += 1;
+                                iM001Tema003.Attributes["style"] = "color: green";
+                            }
+                            if (EstatusTemas(1, 4) == false)
+                            {
+                                EstatusMAteria += 1;
+                                iM001Tema004.Attributes["style"] = "color: green";
+                            }
+                            if (EstatusTemas(1, 5) == false)
+                            {
+                                EstatusMAteria += 1;
+                                iM001Tema005.Attributes["style"] = "color: green";
+                            }
+                            if (EstatusTemas(1, 6) == false)
+                            {
+                                EstatusMAteria += 1;
+                                iM001Tema006.Attributes["style"] = "color: green";
+                            }
+                            if (EstatusTemas(1, 7) == false)
+                            {
+                                EstatusMAteria += 1;
+                                iM001Tema007.Attributes["style"] = "color: green";
+                            }
+                            if (EstatusTemas(1, 8) == false)
+                            {
+                                EstatusMAteria += 1;
+                                iM001Tema008.Attributes["style"] = "color: green";
+                            }
+                            if (EstatusTemas(1, 9) == false)
+                            {
+                                EstatusMAteria += 1;
+                                iM001Tema009.Attributes["style"] = "color: green";
+                            }
+                            if (EstatusTemas(1, 10) == false)
+                            {
+                                EstatusMAteria += 1;
+                                iM001Tema010.Attributes["style"] = "color: green";
+                            }
+                            if (EstatusTemas(1, 11) == false)
+                            {
+                                EstatusMAteria += 1;
+                                iM001Tema011.Attributes["style"] = "color: green";
+                            }
+                            if (EstatusTemas(1, 12) == false)
+                            {
+                                EstatusMAteria += 1;
+                                iM001Tema012.Attributes["style"] = "color: green";
+                            }
+
+                            if (EstatusMAteria == 12)
+                            {
+                                iMateria001.Attributes["style"] = "color: green";
+                                upMateria001.Update();
+                            }
                             break;
 
                         case 2:
@@ -1307,6 +1406,7 @@ namespace IntelimundoExamenes
                                 join d in mMateria.catMateriaTema on c.MateriaTemaID equals d.MateriaTemaID
                                 where d.MateriaID == MateriaID
                                 where c.MateriaTemaID == MateriaTemaID
+                                where a.UsuarioID == usr_ID
                                 select a
                                    ).ToList();
                 if (iMateria.Count == 0)

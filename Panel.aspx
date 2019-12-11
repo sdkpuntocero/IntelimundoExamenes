@@ -104,8 +104,8 @@
                                     <li class="sidebar-dropdown">
 
                                         <a href="#">
-
-                                            <i class="fas fa-square-root-alt"></i>
+                                            <i class="fas fa-microscope"></i>
+                                          
                                             <span>
 
                                                 <asp:Label ID="lblMateria001" runat="server"></asp:Label>
@@ -268,7 +268,7 @@
                                     <li class="sidebar-dropdown">
 
                                         <a href="#">
-                                            <i class="fas fa-square-root-alt"></i>
+                                            <i class="fas fa-spell-check"></i>
                                             <span>
                                                 <asp:Label ID="lblMateria002" runat="server"></asp:Label>
                                             </span><i class="fa fa-circle" runat="server" id="iMateria002" style="color: #dc3545"></i>
@@ -404,7 +404,7 @@
                             <li class="sidebar-dropdown">
 
                                 <a href="#">
-                                    <i class="fas fa-square-root-alt"></i>
+                                    <i class="fas fa-university"></i>
                                     <span>
                                         <asp:Label ID="lblMateria003" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria003" style="color: #dc3545"></i>
@@ -413,7 +413,7 @@
                             <li class="sidebar-dropdown">
 
                                 <a href="#">
-                                    <i class="fas fa-square-root-alt"></i>
+                                    <i class="fas fa-atom"></i>
                                     <span>
                                         <asp:Label ID="lblMateria004" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria004" style="color: #dc3545"></i>
@@ -422,7 +422,8 @@
                             <li class="sidebar-dropdown">
 
                                 <a href="#">
-                                    <i class="fas fa-square-root-alt"></i>
+                                    <i class="fas fa-globe"></i>
+                                    
                                     <span>
                                         <asp:Label ID="lblMateria005" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria005" style="color: #dc3545"></i>
@@ -431,7 +432,7 @@
                             <li class="sidebar-dropdown">
 
                                 <a href="#">
-                                    <i class="fas fa-square-root-alt"></i>
+                                    <i class="fas fa-globe-americas"></i>
                                     <span>
                                         <asp:Label ID="lblMateria006" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria006" style="color: #dc3545"></i>
@@ -440,7 +441,8 @@
                             <li class="sidebar-dropdown">
 
                                 <a href="#">
-                                    <i class="fas fa-square-root-alt"></i>
+                                    <i class="fas fa-globe-europe"></i>
+                                     
                                     <span>
                                         <asp:Label ID="lblMateria007" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria007" style="color: #dc3545"></i>
@@ -449,7 +451,7 @@
                             <li class="sidebar-dropdown">
 
                                 <a href="#">
-                                    <i class="fas fa-square-root-alt"></i>
+                                   <i class="fas fa-feather-alt"></i>
                                     <span>
                                         <asp:Label ID="lblMateria008" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria008" style="color: #dc3545"></i>
@@ -467,7 +469,7 @@
                             <li class="sidebar-dropdown">
 
                                 <a href="#">
-                                    <i class="fas fa-square-root-alt"></i>
+                                    <i class="fas fa-vials"></i>
                                     <span>
                                         <asp:Label ID="lblMateria010" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria010" style="color: #dc3545"></i>
@@ -579,42 +581,42 @@
                                                 </div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar progress-bar bg-success" role="progressbar" aria-valuemax="100" runat="server" id="divMat003D">
+                                                <div class="progress-bar progress-bar progress-bar bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat003D">
                                                     <asp:Label ID="lblMat003D" runat="server" Font-Size="Smaller"></asp:Label>
                                                 </div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuemax="100" runat="server" id="divMat004D">
+                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat004D">
                                                     <asp:Label ID="lblMat004D" runat="server" Font-Size="Smaller"></asp:Label>
                                                 </div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuemax="100" runat="server" id="divMat005D">
+                                                <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat005D">
                                                     <asp:Label ID="lblMat005D" runat="server" Font-Size="Smaller"></asp:Label>
                                                 </div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuemax="100" runat="server" id="divMat006D">
+                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat006D">
                                                     <asp:Label ID="lblMat006D" runat="server" Font-Size="Smaller"></asp:Label>
                                                 </div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar progress-bar bg-info" role="progressbar" aria-valuemax="100" runat="server" id="divMat007D">
+                                                <div class="progress-bar progress-bar progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat007D">
                                                     <asp:Label ID="lblMat007D" runat="server" Font-Size="Smaller"></asp:Label>
                                                 </div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuemax="100" runat="server" id="divMat008D">
+                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat008D">
                                                     <asp:Label ID="lblMat008D" runat="server" Font-Size="Smaller"></asp:Label>
                                                 </div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar progress-bar bg-success" role="progressbar" aria-valuemax="100" runat="server" id="divMat009D">
+                                                <div class="progress-bar progress-bar progress-bar bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat009D">
                                                     <asp:Label ID="lblMat009D" runat="server" Font-Size="Smaller"></asp:Label>
                                                 </div>
                                             </div>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuemax="100" runat="server" id="divMat0010D">
+                                                <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat0010D">
                                                     <asp:Label ID="lblMat0010D" runat="server" Font-Size="Smaller"></asp:Label>
                                                 </div>
                                             </div>
@@ -624,7 +626,7 @@
                                             <h2>Cuestionarios de Evaluación</h2>
                                             <hr>
                                             <div class="progress mt-4">
-                                                <div class="progress-bar progress-bar progress-bar " role="progressbar" aria-valuemax="100" runat="server" id="divMat001C">
+                                                <div class="progress-bar progress-bar progress-bar " role="progressbar" aria-valuemin="0" aria-valuemax="100" runat="server" id="divMat001C">
                                                     <asp:Label ID="lblMat001C" runat="server" Font-Size="Smaller"></asp:Label>
                                                 </div>
                                             </div>
@@ -646,36 +648,36 @@
                                             <div class="progress mt-4">
                                                 <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuemax="100" runat="server" id="divMat005C">
                                                     <asp:Label ID="lblMat005C" runat="server" Font-Size="Smaller"></asp:Label>
-                                                    <div>
-                                                    </div>
-                                                    <div class="progress mt-4">
-                                                        <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuemax="100" runat="server" id="divMat006C">
-                                                            <asp:Label ID="lblMat006C" runat="server" Font-Size="Smaller"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress mt-4">
-                                                        <div class="progress-bar progress-bar progress-bar bg-info" role="progressbar" aria-valuemax="100" runat="server" id="divMat007C">
-                                                            <asp:Label ID="lblMat007C" runat="server" Font-Size="Smaller"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress mt-4">
-                                                        <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuemax="100" runat="server" id="divMat008C">
-                                                            <asp:Label ID="lblMat008C" runat="server" Font-Size="Smaller"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress mt-4">
-                                                        <div class="progress-bar progress-bar progress-bar bg-success" role="progressbar" aria-valuemax="100" runat="server" id="divMat009C">
-                                                            <asp:Label ID="lblMat009C" runat="server" Font-Size="Smaller"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress mt-4">
-                                                        <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuemax="100" runat="server" id="divMat0010C">
-                                                            <asp:Label ID="lblMat0010C" runat="server" Font-Size="Smaller"></asp:Label>
-                                                        </div>
-                                                    </div>
+
+                                                </div>
+
+                                               
+                                            </div>
+                                            <div class="progress mt-4">
+                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuemax="100" runat="server" id="divMat006C">
+                                                    <asp:Label ID="lblMat006C" runat="server" Font-Size="Smaller"></asp:Label>
                                                 </div>
                                             </div>
-
+                                            <div class="progress mt-4">
+                                                <div class="progress-bar progress-bar progress-bar bg-info" role="progressbar" aria-valuemax="100" runat="server" id="divMat007C">
+                                                    <asp:Label ID="lblMat007C" runat="server" Font-Size="Smaller"></asp:Label>
+                                                </div>
+                                            </div>
+                                            <div class="progress mt-4">
+                                                <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuemax="100" runat="server" id="divMat008C">
+                                                    <asp:Label ID="lblMat008C" runat="server" Font-Size="Smaller"></asp:Label>
+                                                </div>
+                                            </div>
+                                            <div class="progress mt-4">
+                                                <div class="progress-bar progress-bar progress-bar bg-success" role="progressbar" aria-valuemax="100" runat="server" id="divMat009C">
+                                                    <asp:Label ID="lblMat009C" runat="server" Font-Size="Smaller"></asp:Label>
+                                                </div>
+                                            </div>
+                                            <div class="progress mt-4">
+                                                <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuemax="100" runat="server" id="divMat0010C">
+                                                    <asp:Label ID="lblMat0010C" runat="server" Font-Size="Smaller"></asp:Label>
+                                                </div>
+                                            </div>
                                             <hr>
 
                                             <footer class="text-center">
@@ -688,8 +690,8 @@
                                                 </div>
                                             </footer>
                                         </div>
-                                        </div>
                                     </div>
+                                </div>
                             </ContentTemplate>
                         </asp:UpdatePanel>
                         <asp:UpdatePanel ID="upTema" runat="server" UpdateMode="Conditional">
