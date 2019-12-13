@@ -14,7 +14,7 @@
     <script src="Scripts/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <title>Aula / Intelimundo</title>
-    <%--Codigo JavaScript--%>>
+    <%--Codigo JavaScript--%>
     <script>
         jQuery(function ($) {
 
@@ -105,7 +105,7 @@
 
                                         <a href="#">
                                             <i class="fas fa-microscope"></i>
-                                          
+
                                             <span>
 
                                                 <asp:Label ID="lblMateria001" runat="server"></asp:Label>
@@ -423,7 +423,7 @@
 
                                 <a href="#">
                                     <i class="fas fa-globe"></i>
-                                    
+
                                     <span>
                                         <asp:Label ID="lblMateria005" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria005" style="color: #dc3545"></i>
@@ -442,7 +442,7 @@
 
                                 <a href="#">
                                     <i class="fas fa-globe-europe"></i>
-                                     
+
                                     <span>
                                         <asp:Label ID="lblMateria007" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria007" style="color: #dc3545"></i>
@@ -451,7 +451,7 @@
                             <li class="sidebar-dropdown">
 
                                 <a href="#">
-                                   <i class="fas fa-feather-alt"></i>
+                                    <i class="fas fa-feather-alt"></i>
                                     <span>
                                         <asp:Label ID="lblMateria008" runat="server"></asp:Label>
                                     </span><i class="fa fa-circle" runat="server" id="iMateria008" style="color: #dc3545"></i>
@@ -648,10 +648,7 @@
                                             <div class="progress mt-4">
                                                 <div class="progress-bar progress-bar progress-bar bg-warning" role="progressbar" aria-valuemax="100" runat="server" id="divMat005C">
                                                     <asp:Label ID="lblMat005C" runat="server" Font-Size="Smaller"></asp:Label>
-
                                                 </div>
-
-                                               
                                             </div>
                                             <div class="progress mt-4">
                                                 <div class="progress-bar progress-bar progress-bar bg-danger" role="progressbar" aria-valuemax="100" runat="server" id="divMat006C">

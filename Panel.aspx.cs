@@ -55,32 +55,29 @@ namespace IntelimundoExamenes
                         case 1:
 
                             lblMateria001.Text = "Biología";
-                     
 
                             using (db_imEntities mRespuestas = new db_imEntities())
                             {
                                 var iRespuestas = (from i_u in mRespuestas.tblPreguntasRespuestas(usr_ID)
-                                                 where i_u.MateriaID == 1
-                                                 select i_u).ToList();
+                                                   where i_u.MateriaID == 1
+                                                   select i_u).ToList();
 
                                 if (iRespuestas.Count == 0)
                                 {
-
                                 }
                                 else
                                 {
                                     Materia001TD = (iRespuestas[2].Preguntas.Value * 100) / iRespuestas[0].Preguntas.Value;
-                                    Materia001TC = (iRespuestas[3].Preguntas.Value * 100) / iRespuestas[1].Preguntas.Value; 
+                                    Materia001TC = (iRespuestas[3].Preguntas.Value * 100) / iRespuestas[1].Preguntas.Value;
                                 }
-
                             }
                             Materia001D = "width: " + Materia001TD.ToString() + "%";
-                          
+
                             divMat001D.Attributes["style"] = Materia001D;
-                            lblMat001D.Text = "Biología " + Materia001D.Replace("width: ","");
+                            lblMat001D.Text = "Biología " + Materia001D.Replace("width: ", "");
 
                             Materia001C = "width: " + Materia001TC.ToString() + "%";
-                        
+
                             divMat001C.Attributes["style"] = Materia001C;
                             lblMat001C.Text = "Biología " + Materia001C.Replace("width: ", "");
 
@@ -90,7 +87,7 @@ namespace IntelimundoExamenes
 
                                 iM001Tema001.Attributes["style"] = "color: green";
                             }
-                            if (EstatusTemas(1,2) == false)
+                            if (EstatusTemas(1, 2) == false)
                             {
                                 EstatusMAteria += 1;
                                 iM001Tema002.Attributes["style"] = "color: green";
@@ -1380,8 +1377,6 @@ namespace IntelimundoExamenes
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema1/index.html";
 
-
-
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
             }
@@ -1451,8 +1446,6 @@ namespace IntelimundoExamenes
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema2/index.html";
 
-
-
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
             }
@@ -1497,8 +1490,6 @@ namespace IntelimundoExamenes
                 upResultado.Update();
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema3/index.html";
-
-
 
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
@@ -1545,8 +1536,6 @@ namespace IntelimundoExamenes
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema4/index.html";
 
-
-
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
             }
@@ -1591,8 +1580,6 @@ namespace IntelimundoExamenes
                 upResultado.Update();
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema5/index.html";
-
-
 
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
@@ -1639,8 +1626,6 @@ namespace IntelimundoExamenes
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema6/index.html";
 
-
-
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
             }
@@ -1685,8 +1670,6 @@ namespace IntelimundoExamenes
                 upResultado.Update();
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema7/index.html";
-
-
 
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
@@ -1733,8 +1716,6 @@ namespace IntelimundoExamenes
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema8/index.html";
 
-
-
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
             }
@@ -1779,8 +1760,6 @@ namespace IntelimundoExamenes
                 upResultado.Update();
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema9/index.html";
-
-
 
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
@@ -1827,8 +1806,6 @@ namespace IntelimundoExamenes
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema10/index.html";
 
-
-
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
             }
@@ -1842,6 +1819,7 @@ namespace IntelimundoExamenes
 
             upTema.Update();
         }
+
         protected void lkbM001Tema011_Click(object sender, EventArgs e)
         {
             OrdenMateriaTemaID = 11;
@@ -1873,8 +1851,6 @@ namespace IntelimundoExamenes
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema11/index.html";
 
-
-
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
             }
@@ -1888,6 +1864,7 @@ namespace IntelimundoExamenes
 
             upTema.Update();
         }
+
         protected void lkbM001Tema012_Click(object sender, EventArgs e)
         {
             OrdenMateriaTemaID = 12;
@@ -1919,8 +1896,6 @@ namespace IntelimundoExamenes
 
                 iframeTema.Attributes["src"] = "Material/Universidad/Biologia/Tema12/index.html";
 
-
-
                 ebbokTema.Visible = false;
                 btnDiagnostico.Visible = true;
             }
@@ -1941,29 +1916,44 @@ namespace IntelimundoExamenes
 
         protected void lkbM002Tema001_Click(object sender, EventArgs e)
         {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-            lblPuntuacion.Text = "0";
-
-            carComentario.Visible = false;
-            comment1.Value = string.Empty;
-            cardPreguntas.Visible = false;
-            cardResultado.Visible = false;
-            upResultado.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
-
             OrdenMateriaTemaID = 1;
+            FiltroMateriaID = 2;
 
             using (db_imEntities mMateria = new db_imEntities())
             {
                 var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == 2
+                                where a.MateriaID == FiltroMateriaID
                                 where a.MateriaOrdenID == OrdenMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
                 lblTema.Text = iMateria.MateriaTema;
                 FiltroMateriaTemaID = iMateria.MateriaTemaID;
+            }
+
+            if (EstatusTemas(FiltroMateriaID, FiltroMateriaTemaID))
+            {
+                divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+                lblPuntuacion.Text = "0";
+                lblPuntDiag.Text = "0";
+
+                carComentario.Visible = false;
+                comment1.Value = string.Empty;
+                cardPreguntas.Visible = false;
+                cardResultado.Visible = false;
+                upResultado.Update();
+
+                iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema1/index.html";
+
+                ebbokTema.Visible = false;
+                btnDiagnostico.Visible = true;
+            }
+            else
+            {
+                divTema.Visible = false;
+                divResumen.Visible = true;
+                iM002Tema001.Attributes["style"] = "color: green";
+                upResumen.Update();
             }
 
             upTema.Update();
@@ -1971,29 +1961,44 @@ namespace IntelimundoExamenes
 
         protected void lkbM002Tema002_Click(object sender, EventArgs e)
         {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-            lblPuntuacion.Text = "0";
-
-            carComentario.Visible = true;
-            comment1.Value = string.Empty;
-            cardPreguntas.Visible = false;
-            cardResultado.Visible = false;
-            upResultado.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema2/index.html";
-
             OrdenMateriaTemaID = 2;
+            FiltroMateriaID = 2;
 
             using (db_imEntities mMateria = new db_imEntities())
             {
                 var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == 2
+                                where a.MateriaID == FiltroMateriaID
                                 where a.MateriaOrdenID == OrdenMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
                 lblTema.Text = iMateria.MateriaTema;
                 FiltroMateriaTemaID = iMateria.MateriaTemaID;
+            }
+
+            if (EstatusTemas(FiltroMateriaID, FiltroMateriaTemaID))
+            {
+                divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+                lblPuntuacion.Text = "0";
+                lblPuntDiag.Text = "0";
+
+                carComentario.Visible = false;
+                comment1.Value = string.Empty;
+                cardPreguntas.Visible = false;
+                cardResultado.Visible = false;
+                upResultado.Update();
+
+                iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema2/index.html";
+
+                ebbokTema.Visible = false;
+                btnDiagnostico.Visible = true;
+            }
+            else
+            {
+                divTema.Visible = false;
+                divResumen.Visible = true;
+                iM002Tema002.Attributes["style"] = "color: green";
+                upResumen.Update();
             }
 
             upTema.Update();
@@ -2001,29 +2006,44 @@ namespace IntelimundoExamenes
 
         protected void lkbM002Tema003_Click(object sender, EventArgs e)
         {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-            lblPuntuacion.Text = "0";
-
-            carComentario.Visible = true;
-            comment1.Value = string.Empty;
-            cardPreguntas.Visible = false;
-            cardResultado.Visible = false;
-            upResultado.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema3/index.html";
-
             OrdenMateriaTemaID = 3;
+            FiltroMateriaID = 2;
 
             using (db_imEntities mMateria = new db_imEntities())
             {
                 var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == 2
+                                where a.MateriaID == FiltroMateriaID
                                 where a.MateriaOrdenID == OrdenMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
                 lblTema.Text = iMateria.MateriaTema;
                 FiltroMateriaTemaID = iMateria.MateriaTemaID;
+            }
+
+            if (EstatusTemas(FiltroMateriaID, FiltroMateriaTemaID))
+            {
+                divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+                lblPuntuacion.Text = "0";
+                lblPuntDiag.Text = "0";
+
+                carComentario.Visible = false;
+                comment1.Value = string.Empty;
+                cardPreguntas.Visible = false;
+                cardResultado.Visible = false;
+                upResultado.Update();
+
+                iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema3/index.html";
+
+                ebbokTema.Visible = false;
+                btnDiagnostico.Visible = true;
+            }
+            else
+            {
+                divTema.Visible = false;
+                divResumen.Visible = true;
+                iM002Tema003.Attributes["style"] = "color: green";
+                upResumen.Update();
             }
 
             upTema.Update();
@@ -2031,29 +2051,44 @@ namespace IntelimundoExamenes
 
         protected void lkbM002Tema004_Click(object sender, EventArgs e)
         {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-            lblPuntuacion.Text = "0";
-
-            carComentario.Visible = true;
-            comment1.Value = string.Empty;
-            cardPreguntas.Visible = false;
-            cardResultado.Visible = false;
-            upResultado.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema4/index.html";
-
             OrdenMateriaTemaID = 4;
+            FiltroMateriaID = 2;
 
             using (db_imEntities mMateria = new db_imEntities())
             {
                 var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == 2
+                                where a.MateriaID == FiltroMateriaID
                                 where a.MateriaOrdenID == OrdenMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
                 lblTema.Text = iMateria.MateriaTema;
                 FiltroMateriaTemaID = iMateria.MateriaTemaID;
+            }
+
+            if (EstatusTemas(FiltroMateriaID, FiltroMateriaTemaID))
+            {
+                divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+                lblPuntuacion.Text = "0";
+                lblPuntDiag.Text = "0";
+
+                carComentario.Visible = false;
+                comment1.Value = string.Empty;
+                cardPreguntas.Visible = false;
+                cardResultado.Visible = false;
+                upResultado.Update();
+
+                iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema4/index.html";
+
+                ebbokTema.Visible = false;
+                btnDiagnostico.Visible = true;
+            }
+            else
+            {
+                divTema.Visible = false;
+                divResumen.Visible = true;
+                iM002Tema004.Attributes["style"] = "color: green";
+                upResumen.Update();
             }
 
             upTema.Update();
@@ -2061,29 +2096,44 @@ namespace IntelimundoExamenes
 
         protected void lkbM002Tema005_Click(object sender, EventArgs e)
         {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-            lblPuntuacion.Text = "0";
-
-            carComentario.Visible = true;
-            comment1.Value = string.Empty;
-            cardPreguntas.Visible = false;
-            cardResultado.Visible = false;
-            upResultado.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema5/index.html";
-
             OrdenMateriaTemaID = 5;
+            FiltroMateriaID = 2;
 
             using (db_imEntities mMateria = new db_imEntities())
             {
                 var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == 2
+                                where a.MateriaID == FiltroMateriaID
                                 where a.MateriaOrdenID == OrdenMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
                 lblTema.Text = iMateria.MateriaTema;
                 FiltroMateriaTemaID = iMateria.MateriaTemaID;
+            }
+
+            if (EstatusTemas(FiltroMateriaID, FiltroMateriaTemaID))
+            {
+                divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+                lblPuntuacion.Text = "0";
+                lblPuntDiag.Text = "0";
+
+                carComentario.Visible = false;
+                comment1.Value = string.Empty;
+                cardPreguntas.Visible = false;
+                cardResultado.Visible = false;
+                upResultado.Update();
+
+                iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema5/index.html";
+
+                ebbokTema.Visible = false;
+                btnDiagnostico.Visible = true;
+            }
+            else
+            {
+                divTema.Visible = false;
+                divResumen.Visible = true;
+                iM002Tema005.Attributes["style"] = "color: green";
+                upResumen.Update();
             }
 
             upTema.Update();
@@ -2091,29 +2141,44 @@ namespace IntelimundoExamenes
 
         protected void lkbM002Tema006_Click(object sender, EventArgs e)
         {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-            lblPuntuacion.Text = "0";
-
-            carComentario.Visible = true;
-            comment1.Value = string.Empty;
-            cardPreguntas.Visible = false;
-            cardResultado.Visible = false;
-            upResultado.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema6/index.html";
-
             OrdenMateriaTemaID = 6;
+            FiltroMateriaID = 2;
 
             using (db_imEntities mMateria = new db_imEntities())
             {
                 var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == 2
+                                where a.MateriaID == FiltroMateriaID
                                 where a.MateriaOrdenID == OrdenMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
                 lblTema.Text = iMateria.MateriaTema;
                 FiltroMateriaTemaID = iMateria.MateriaTemaID;
+            }
+
+            if (EstatusTemas(FiltroMateriaID, FiltroMateriaTemaID))
+            {
+                divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+                lblPuntuacion.Text = "0";
+                lblPuntDiag.Text = "0";
+
+                carComentario.Visible = false;
+                comment1.Value = string.Empty;
+                cardPreguntas.Visible = false;
+                cardResultado.Visible = false;
+                upResultado.Update();
+
+                iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema6/index.html";
+
+                ebbokTema.Visible = false;
+                btnDiagnostico.Visible = true;
+            }
+            else
+            {
+                divTema.Visible = false;
+                divResumen.Visible = true;
+                iM002Tema006.Attributes["style"] = "color: green";
+                upResumen.Update();
             }
 
             upTema.Update();
@@ -2121,29 +2186,44 @@ namespace IntelimundoExamenes
 
         protected void lkbM002Tema007_Click(object sender, EventArgs e)
         {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-            lblPuntuacion.Text = "0";
-
-            carComentario.Visible = true;
-            comment1.Value = string.Empty;
-            cardPreguntas.Visible = false;
-            cardResultado.Visible = false;
-            upResultado.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema7/index.html";
-
             OrdenMateriaTemaID = 7;
+            FiltroMateriaID = 2;
 
             using (db_imEntities mMateria = new db_imEntities())
             {
                 var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == 2
+                                where a.MateriaID == FiltroMateriaID
                                 where a.MateriaOrdenID == OrdenMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
                 lblTema.Text = iMateria.MateriaTema;
                 FiltroMateriaTemaID = iMateria.MateriaTemaID;
+            }
+
+            if (EstatusTemas(FiltroMateriaID, FiltroMateriaTemaID))
+            {
+                divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+                lblPuntuacion.Text = "0";
+                lblPuntDiag.Text = "0";
+
+                carComentario.Visible = false;
+                comment1.Value = string.Empty;
+                cardPreguntas.Visible = false;
+                cardResultado.Visible = false;
+                upResultado.Update();
+
+                iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema7/index.html";
+
+                ebbokTema.Visible = false;
+                btnDiagnostico.Visible = true;
+            }
+            else
+            {
+                divTema.Visible = false;
+                divResumen.Visible = true;
+                iM002Tema007.Attributes["style"] = "color: green";
+                upResumen.Update();
             }
 
             upTema.Update();
@@ -2151,29 +2231,44 @@ namespace IntelimundoExamenes
 
         protected void lkbM002Tema008_Click(object sender, EventArgs e)
         {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-            lblPuntuacion.Text = "0";
-
-            carComentario.Visible = true;
-            comment1.Value = string.Empty;
-            cardPreguntas.Visible = false;
-            cardResultado.Visible = false;
-            upResultado.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema8/index.html";
-
             OrdenMateriaTemaID = 8;
+            FiltroMateriaID = 2;
 
             using (db_imEntities mMateria = new db_imEntities())
             {
                 var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == 2
+                                where a.MateriaID == FiltroMateriaID
                                 where a.MateriaOrdenID == OrdenMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
                 lblTema.Text = iMateria.MateriaTema;
                 FiltroMateriaTemaID = iMateria.MateriaTemaID;
+            }
+
+            if (EstatusTemas(FiltroMateriaID, FiltroMateriaTemaID))
+            {
+                divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+                lblPuntuacion.Text = "0";
+                lblPuntDiag.Text = "0";
+
+                carComentario.Visible = false;
+                comment1.Value = string.Empty;
+                cardPreguntas.Visible = false;
+                cardResultado.Visible = false;
+                upResultado.Update();
+
+                iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema8/index.html";
+
+                ebbokTema.Visible = false;
+                btnDiagnostico.Visible = true;
+            }
+            else
+            {
+                divTema.Visible = false;
+                divResumen.Visible = true;
+                iM002Tema008.Attributes["style"] = "color: green";
+                upResumen.Update();
             }
 
             upTema.Update();
@@ -2181,23 +2276,13 @@ namespace IntelimundoExamenes
 
         protected void lkbM002Tema009_Click(object sender, EventArgs e)
         {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-            lblPuntuacion.Text = "0";
-
-            carComentario.Visible = true;
-            comment1.Value = string.Empty;
-            cardPreguntas.Visible = false;
-            cardResultado.Visible = false;
-            upResultado.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema9/index.html";
-
             OrdenMateriaTemaID = 9;
+            FiltroMateriaID = 2;
 
             using (db_imEntities mMateria = new db_imEntities())
             {
                 var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == 2
+                                where a.MateriaID == FiltroMateriaID
                                 where a.MateriaOrdenID == OrdenMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
@@ -2206,34 +2291,74 @@ namespace IntelimundoExamenes
                 FiltroMateriaTemaID = iMateria.MateriaTemaID;
             }
 
+            if (EstatusTemas(FiltroMateriaID, FiltroMateriaTemaID))
+            {
+                divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+                lblPuntuacion.Text = "0";
+                lblPuntDiag.Text = "0";
+
+                carComentario.Visible = false;
+                comment1.Value = string.Empty;
+                cardPreguntas.Visible = false;
+                cardResultado.Visible = false;
+                upResultado.Update();
+
+                iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema9/index.html";
+
+                ebbokTema.Visible = false;
+                btnDiagnostico.Visible = true;
+            }
+            else
+            {
+                divTema.Visible = false;
+                divResumen.Visible = true;
+                iM002Tema009.Attributes["style"] = "color: green";
+                upResumen.Update();
+            }
+
             upTema.Update();
         }
 
         protected void lkbM002Tema010_Click(object sender, EventArgs e)
         {
-            divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
-            lblPuntuacion.Text = "0";
-
-            carComentario.Visible = true;
-            comment1.Value = string.Empty;
-            cardPreguntas.Visible = false;
-            cardResultado.Visible = false;
-            upResultado.Update();
-
-            iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema10/index.html";
-
             OrdenMateriaTemaID = 10;
+            FiltroMateriaID = 2;
 
             using (db_imEntities mMateria = new db_imEntities())
             {
                 var iMateria = (from a in mMateria.catMateriaTema
-                                where a.MateriaID == 2
+                                where a.MateriaID == FiltroMateriaID
                                 where a.MateriaOrdenID == OrdenMateriaTemaID
                                 select a
                                    ).FirstOrDefault();
 
                 lblTema.Text = iMateria.MateriaTema;
                 FiltroMateriaTemaID = iMateria.MateriaTemaID;
+            }
+
+            if (EstatusTemas(FiltroMateriaID, FiltroMateriaTemaID))
+            {
+                divTema.Visible = true; divResumen.Visible = false; upResumen.Update();
+                lblPuntuacion.Text = "0";
+                lblPuntDiag.Text = "0";
+
+                carComentario.Visible = false;
+                comment1.Value = string.Empty;
+                cardPreguntas.Visible = false;
+                cardResultado.Visible = false;
+                upResultado.Update();
+
+                iframeTema.Attributes["src"] = "Material/Universidad/Espanol/Tema10/index.html";
+
+                ebbokTema.Visible = false;
+                btnDiagnostico.Visible = true;
+            }
+            else
+            {
+                divTema.Visible = false;
+                divResumen.Visible = true;
+                iM002Tema010.Attributes["style"] = "color: green";
+                upResumen.Update();
             }
 
             upTema.Update();
@@ -2424,10 +2549,8 @@ namespace IntelimundoExamenes
                         int intPunt = iMateria.Count;
                         int intCal = (intPunt * 2);
 
-
                         if (FiltroMateriaID == 1)
                         {
-
                             int MatTemaID = FiltroMateriaTemaID;
 
                             switch (MatTemaID)
@@ -2438,75 +2561,84 @@ namespace IntelimundoExamenes
 
                                     upM001Tema001.Update();
                                     break;
+
                                 case 2:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema002.Attributes["style"] = "color: yellow";
 
                                     upM001Tema002.Update();
                                     break;
+
                                 case 3:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema003.Attributes["style"] = "color: yellow";
 
                                     upM001Tema003.Update();
                                     break;
+
                                 case 4:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema004.Attributes["style"] = "color: yellow";
 
                                     upM001Tema004.Update();
                                     break;
+
                                 case 5:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema005.Attributes["style"] = "color: yellow";
 
                                     upM001Tema005.Update();
                                     break;
+
                                 case 6:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema006.Attributes["style"] = "color: yellow";
 
                                     upM001Tema006.Update();
                                     break;
+
                                 case 7:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema007.Attributes["style"] = "color: yellow";
 
                                     upM001Tema007.Update();
                                     break;
+
                                 case 8:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema008.Attributes["style"] = "color: yellow";
 
                                     upM001Tema008.Update();
                                     break;
+
                                 case 9:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema009.Attributes["style"] = "color: yellow";
 
                                     upM001Tema009.Update();
                                     break;
+
                                 case 10:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema010.Attributes["style"] = "color: yellow";
 
                                     upM001Tema0010.Update();
                                     break;
+
                                 case 11:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema011.Attributes["style"] = "color: yellow";
 
                                     upM001Tema0011.Update();
                                     break;
+
                                 case 12:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema012.Attributes["style"] = "color: yellow";
 
                                     upM001Tema0012.Update();
                                     break;
-
                             }
-
                         }
                         if (FiltroMateriaID == 2)
                         {
@@ -2520,62 +2652,69 @@ namespace IntelimundoExamenes
 
                                     upM001Tema001.Update();
                                     break;
+
                                 case 2:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema002.Attributes["style"] = "color: yellow";
 
                                     upM001Tema002.Update();
                                     break;
+
                                 case 3:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema003.Attributes["style"] = "color: yellow";
 
                                     upM001Tema003.Update();
                                     break;
+
                                 case 4:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema004.Attributes["style"] = "color: yellow";
 
                                     upM001Tema004.Update();
                                     break;
+
                                 case 5:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema005.Attributes["style"] = "color: yellow";
 
                                     upM001Tema005.Update();
                                     break;
+
                                 case 6:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema006.Attributes["style"] = "color: yellow";
 
                                     upM001Tema006.Update();
                                     break;
+
                                 case 7:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema007.Attributes["style"] = "color: yellow";
 
                                     upM001Tema007.Update();
                                     break;
+
                                 case 8:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema008.Attributes["style"] = "color: yellow";
 
                                     upM001Tema008.Update();
                                     break;
+
                                 case 9:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema009.Attributes["style"] = "color: yellow";
 
                                     upM001Tema009.Update();
                                     break;
+
                                 case 10:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema010.Attributes["style"] = "color: yellow";
 
                                     upM001Tema0010.Update();
                                     break;
-
-
                             }
                         }
 
@@ -2893,10 +3032,8 @@ namespace IntelimundoExamenes
                         int intPunt = iMateria.Count;
                         int intCal = (intPunt * 10) / dtPreguntasDiagnostico.Rows.Count;
 
-
                         if (FiltroMateriaID == 1)
                         {
-
                             int MatTemaID = FiltroMateriaTemaID;
 
                             switch (MatTemaID)
@@ -2907,75 +3044,84 @@ namespace IntelimundoExamenes
 
                                     upM001Tema001.Update();
                                     break;
+
                                 case 2:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema002.Attributes["style"] = "color: green";
 
                                     upM001Tema002.Update();
                                     break;
+
                                 case 3:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema003.Attributes["style"] = "color: green";
 
                                     upM001Tema003.Update();
                                     break;
+
                                 case 4:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema004.Attributes["style"] = "color: green";
 
                                     upM001Tema004.Update();
                                     break;
+
                                 case 5:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema005.Attributes["style"] = "color: green";
 
                                     upM001Tema005.Update();
                                     break;
+
                                 case 6:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema006.Attributes["style"] = "color: green";
 
                                     upM001Tema006.Update();
                                     break;
+
                                 case 7:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema007.Attributes["style"] = "color: green";
 
                                     upM001Tema007.Update();
                                     break;
+
                                 case 8:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema008.Attributes["style"] = "color: green";
 
                                     upM001Tema008.Update();
                                     break;
+
                                 case 9:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema009.Attributes["style"] = "color: green";
 
                                     upM001Tema009.Update();
                                     break;
+
                                 case 10:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema010.Attributes["style"] = "color: green";
 
                                     upM001Tema0010.Update();
                                     break;
+
                                 case 11:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema011.Attributes["style"] = "color: green";
 
                                     upM001Tema0011.Update();
                                     break;
+
                                 case 12:
                                     iMateria001.Attributes["style"] = "color: yellow";
                                     iM001Tema012.Attributes["style"] = "color: green";
 
                                     upM001Tema0012.Update();
                                     break;
-
                             }
-
                         }
                         if (FiltroMateriaID == 2)
                         {
@@ -2989,67 +3135,71 @@ namespace IntelimundoExamenes
 
                                     upM001Tema001.Update();
                                     break;
+
                                 case 2:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema002.Attributes["style"] = "color: green";
 
                                     upM001Tema002.Update();
                                     break;
+
                                 case 3:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema003.Attributes["style"] = "color: green";
 
                                     upM001Tema003.Update();
                                     break;
+
                                 case 4:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema004.Attributes["style"] = "color: green";
 
                                     upM001Tema004.Update();
                                     break;
+
                                 case 5:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema005.Attributes["style"] = "color: green";
 
                                     upM001Tema005.Update();
                                     break;
+
                                 case 6:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema006.Attributes["style"] = "color: green";
 
                                     upM001Tema006.Update();
                                     break;
+
                                 case 7:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema007.Attributes["style"] = "color: green";
 
                                     upM001Tema007.Update();
                                     break;
+
                                 case 8:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema008.Attributes["style"] = "color: green";
 
                                     upM001Tema008.Update();
                                     break;
+
                                 case 9:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema009.Attributes["style"] = "color: green";
 
                                     upM001Tema009.Update();
                                     break;
+
                                 case 10:
                                     iMateria002.Attributes["style"] = "color: yellow";
                                     iM001Tema010.Attributes["style"] = "color: green";
 
                                     upM001Tema0010.Update();
                                     break;
-                   
-
                             }
                         }
-
-
-
 
                         lblPuntuacion.Text = intCal.ToString();
 
@@ -3060,21 +3210,21 @@ namespace IntelimundoExamenes
                         cardPreguntas.Visible = false;
 
                         var iMateriaf = (from a in mMateria.catMateriaTemaPreguntaRespuestaBitacora
-                                        join b in mMateria.catMateriaTemaPreguntaRespuesta on a.MateriaTemaPreguntaRespuestaID equals b.MateriaTemaPreguntaRespuestaID
-                                        join c in mMateria.catMateriaTemaPregunta on b.MateriaTemaPreguntaID equals c.MateriaTemaPreguntaID
-                                        join d in mMateria.catMateriaTema on c.MateriaTemaID equals d.MateriaTemaID
-                                        where a.TipoPreguntaID == 2
-                                        where a.UsuarioID == usr_ID
-                                        where d.MateriaTemaID == FiltroMateriaTemaID
-                                        where d.MateriaID == FiltroMateriaID
+                                         join b in mMateria.catMateriaTemaPreguntaRespuesta on a.MateriaTemaPreguntaRespuestaID equals b.MateriaTemaPreguntaRespuestaID
+                                         join c in mMateria.catMateriaTemaPregunta on b.MateriaTemaPreguntaID equals c.MateriaTemaPreguntaID
+                                         join d in mMateria.catMateriaTema on c.MateriaTemaID equals d.MateriaTemaID
+                                         where a.TipoPreguntaID == 2
+                                         where a.UsuarioID == usr_ID
+                                         where d.MateriaTemaID == FiltroMateriaTemaID
+                                         where d.MateriaID == FiltroMateriaID
 
-                                        select new
-                                        {
-                                            c.MateriaTemaPregunta,
-                                            b.MateriaTemaPreguntaRespuesta,
-                                            b.Respuesta,
-                                            b.Justificacion
-                                        }
+                                         select new
+                                         {
+                                             c.MateriaTemaPregunta,
+                                             b.MateriaTemaPreguntaRespuesta,
+                                             b.Respuesta,
+                                             b.Justificacion
+                                         }
                                        ).ToList();
 
                         if (iMateriaf.Count != 0)
