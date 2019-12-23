@@ -564,8 +564,8 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <hr>
+                                    
+                                    <hr> 
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                             <h2>Cuestionarios de Diagnostico</h2>
