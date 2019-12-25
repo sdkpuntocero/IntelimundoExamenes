@@ -14,11 +14,11 @@ namespace IntelimundoExamenes
     
     public partial class catMateriaTemaPreguntaRespuestaBitacora
     {
-        public int MateriaTemaPreguntaRespuestaBitacoraID { get; set; }
+        public Nullable<int> TipoPreguntaID { get; set; }
         public Nullable<int> MateriaTemaPreguntaRespuestaID { get; set; }
         public Nullable<System.Guid> UsuarioID { get; set; }
         public Nullable<System.DateTime> FechaRegistro { get; set; }
         public Nullable<int> MateriaTemaPreguntaID { get; set; }
-        public Nullable<int> TipoPreguntaID { get; set; }
+        public int MateriaTemaPreguntaRespuestaBitacoraID { get; set; }
     }
 }

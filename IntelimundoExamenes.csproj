@@ -1662,6 +1662,16 @@
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\imagehover.min.css" />
     <Content Include="css\style.css" />
+    <Content Include="Db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Db.edmx</DependentUpon>
+      <LastGenOutput>Db.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Db.edmx</DependentUpon>
+      <LastGenOutput>Db.cs</LastGenOutput>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="Estilos\circle.css" />
     <Content Include="Estilos\Panel.css" />
@@ -1684,16 +1694,6 @@
     <Content Include="img\course08.jpg" />
     <Content Include="img\logo-web.png" />
     <Content Include="img\mentor.jpg" />
-    <Content Include="Intelimundo.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Intelimundo.edmx</DependentUpon>
-      <LastGenOutput>Intelimundo.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Intelimundo.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Intelimundo.edmx</DependentUpon>
-      <LastGenOutput>Intelimundo.cs</LastGenOutput>
-    </Content>
     <Content Include="js\bootstrap-4.3.1.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
@@ -1785,12 +1785,12 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
-    <EntityDeploy Include="Intelimundo.edmx">
+    <EntityDeploy Include="Db.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Intelimundo.Designer.cs</LastGenOutput>
+      <LastGenOutput>Db.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Intelimundo.edmx.diagram">
-      <DependentUpon>Intelimundo.edmx</DependentUpon>
+    <Content Include="Db.edmx.diagram">
+      <DependentUpon>Db.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -1820,22 +1820,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="catMateria.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="catMateriaTema.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="catMateriaTemaPregunta.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="catMateriaTemaPreguntaRespuesta.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="catMateriaTemaPreguntaRespuestaBitacora.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="catMateriaTemaSintesis.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Db.edmx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -1846,142 +1861,127 @@
     </Compile>
     <Compile Include="Encrypta.cs" />
     <Compile Include="fact_alergia.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_area.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_banco.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_centro_tipo.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_clte_cont_tipo.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_estcivil.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_est_clte.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_est_cnt.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_est_comp.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_est_inv.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_est_prov.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_est_usr.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_est_vnta.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_genero.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_grado_escolar.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_licencia.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_nivel_escolar.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_perfil.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_periodo.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_rfc_tipo.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="fact_tipo_escolar.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_centro.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_centro_ctrl.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_clte.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_clte_contacto.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_comp.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_email_env.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_emp.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_inv.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_proveedor.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_prov_contacto.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_sepomex.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_usr_bancario.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_usr_contacto.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_usr_escolar.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_usr_medicos.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_usr_personales.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_usr_rh.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_usuario.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_vnta.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="inf_vnta_inv.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Intelimundo.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Intelimundo.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Intelimundo.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Intelimundo.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Intelimundo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Intelimundo.edmx</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Panel.aspx.cs">
       <DependentUpon>Panel.aspx</DependentUpon>
@@ -1991,7 +1991,7 @@
       <DependentUpon>Panel.aspx</DependentUpon>
     </Compile>
     <Compile Include="PreguntasSP_Result.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="PreRegistro.aspx.cs">
       <DependentUpon>PreRegistro.aspx</DependentUpon>
@@ -2009,10 +2009,10 @@
       <DependentUpon>RegistroInicial.aspx</DependentUpon>
     </Compile>
     <Compile Include="RespuestasSP_Result.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="tblPreguntasRespuestas_Result.cs">
-      <DependentUpon>Intelimundo.tt</DependentUpon>
+      <DependentUpon>Db.tt</DependentUpon>
     </Compile>
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>

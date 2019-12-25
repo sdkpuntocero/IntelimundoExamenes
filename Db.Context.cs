@@ -75,6 +75,20 @@ namespace IntelimundoExamenes
         public virtual DbSet<inf_vnta_inv> inf_vnta_inv { get; set; }
         public virtual DbSet<inf_sepomex> inf_sepomex { get; set; }
     
+        [DbFunction("db_imEntities", "tblPreguntasRespuestas")]
+        public virtual IQueryable<tblPreguntasRespuestas_Result> tblPreguntasRespuestas(Nullable<int> materiaF, Nullable<System.Guid> usuarioFiltrado)
+        {
+            var materiaFParameter = materiaF.HasValue ?
+                new ObjectParameter("MateriaF", materiaF) :
+                new ObjectParameter("MateriaF", typeof(int));
+    
+            var usuarioFiltradoParameter = usuarioFiltrado.HasValue ?
+                new ObjectParameter("UsuarioFiltrado", usuarioFiltrado) :
+                new ObjectParameter("UsuarioFiltrado", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<tblPreguntasRespuestas_Result>("[db_imEntities].[tblPreguntasRespuestas](@MateriaF, @UsuarioFiltrado)", materiaFParameter, usuarioFiltradoParameter);
+        }
+    
         public virtual ObjectResult<PreguntasSP_Result> PreguntasSP(Nullable<int> materiaIDFiltro, Nullable<int> materiaTemaIDFiltro, Nullable<int> tipoPregunta)
         {
             var materiaIDFiltroParameter = materiaIDFiltro.HasValue ?
@@ -107,16 +121,6 @@ namespace IntelimundoExamenes
                 new ObjectParameter("MateriaTemaPreguntaIDFiltro", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RespuestasSP_Result>("RespuestasSP", materiaIDFiltroParameter, materiaTemaIDFiltroParameter, materiaTemaPreguntaIDFiltroParameter);
-        }
-    
-        [DbFunction("db_imEntities", "tblPreguntasRespuestas")]
-        public virtual IQueryable<tblPreguntasRespuestas_Result> tblPreguntasRespuestas(Nullable<System.Guid> usuarioFiltrado)
-        {
-            var usuarioFiltradoParameter = usuarioFiltrado.HasValue ?
-                new ObjectParameter("UsuarioFiltrado", usuarioFiltrado) :
-                new ObjectParameter("UsuarioFiltrado", typeof(System.Guid));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<tblPreguntasRespuestas_Result>("[db_imEntities].[tblPreguntasRespuestas](@UsuarioFiltrado)", usuarioFiltradoParameter);
         }
     }
 }

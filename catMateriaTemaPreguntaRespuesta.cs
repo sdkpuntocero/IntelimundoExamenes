@@ -14,10 +14,10 @@ namespace IntelimundoExamenes
     
     public partial class catMateriaTemaPreguntaRespuesta
     {
-        public int MateriaTemaPreguntaRespuestaID { get; set; }
         public string MateriaTemaPreguntaRespuesta { get; set; }
         public Nullable<bool> Respuesta { get; set; }
-        public string Justificacion { get; set; }
         public Nullable<int> MateriaTemaPreguntaID { get; set; }
+        public string Justificacion { get; set; }
+        public int MateriaTemaPreguntaRespuestaID { get; set; }
     }
 }

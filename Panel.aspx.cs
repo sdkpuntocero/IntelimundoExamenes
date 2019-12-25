@@ -58,8 +58,7 @@ namespace IntelimundoExamenes
 
                             using (db_imEntities mRespuestas = new db_imEntities())
                             {
-                                var iRespuestas = (from i_u in mRespuestas.tblPreguntasRespuestas(usr_ID)
-                                                   where i_u.MateriaID == 1
+                                var iRespuestas = (from i_u in mRespuestas.tblPreguntasRespuestas(1, usr_ID)
                                                    select i_u).ToList();
 
                                 if (iRespuestas.Count == 0)
@@ -69,8 +68,8 @@ namespace IntelimundoExamenes
                                 }
                                 else
                                 {
-                                    Materia001TD = (((iRespuestas[2].Preguntas.Value * 100) / iRespuestas[0].Preguntas.Value) * 100) / (12 * 100);
-                                    Materia001TC = (((iRespuestas[3].Preguntas.Value * 100) / iRespuestas[1].Preguntas.Value) * 100) / (12 * 100);
+                                    Materia001TD = iRespuestas[0].DiagnoticoP.Value;
+                                    Materia001TC = iRespuestas[0].CuestionarioP.Value;
                                 }
                             }
                             Materia001D = "width: " + Materia001TD.ToString() + "%";
@@ -155,12 +154,11 @@ namespace IntelimundoExamenes
                         case 2:
 
                             lblMateria002.Text = "Español";
-                            
+
 
                             using (db_imEntities mRespuestas = new db_imEntities())
                             {
-                                var iRespuestas = (from i_u in mRespuestas.tblPreguntasRespuestas(usr_ID)
-                                                   where i_u.MateriaID == 2
+                                var iRespuestas = (from i_u in mRespuestas.tblPreguntasRespuestas(2, usr_ID)
                                                    select i_u).ToList();
 
                                 if (iRespuestas.Count == 0)
@@ -170,8 +168,8 @@ namespace IntelimundoExamenes
                                 }
                                 else
                                 {
-                                    Materia001TD = (((iRespuestas[2].Preguntas.Value * 100) / iRespuestas[0].Preguntas.Value) * 100) / (12 * 100);
-                                    Materia001TC = (((iRespuestas[3].Preguntas.Value * 100) / iRespuestas[1].Preguntas.Value) * 100) / (12 * 100);
+                                    Materia001TD = iRespuestas[0].DiagnoticoP.Value;
+                                    Materia001TC = iRespuestas[0].CuestionarioP.Value;
                                 }
                             }
                             Materia001D = "width: " + Materia001TD.ToString() + "%";
@@ -235,7 +233,7 @@ namespace IntelimundoExamenes
                                 EstatusMAteria += 1;
                                 iM002Tema010.Attributes["style"] = "color: green";
                             }
-          
+
                             if (EstatusMAteria == 10)
                             {
                                 iMateria002.Attributes["style"] = "color: green";
@@ -246,57 +244,57 @@ namespace IntelimundoExamenes
                         case 3:
 
                             lblMateria003.Text = "Filosofía";
-                            divMat002D.Attributes["style"] = "width: 0%";
-                            lblMat002D.Text = "Español 0%";
+                            divMat003D.Attributes["style"] = "width: 0%";
+                            lblMat003D.Text = "Español 0%";
                             break;
 
                         case 4:
 
                             lblMateria004.Text = "Física";
-                            divMat002D.Attributes["style"] = "width: 0%";
-                            lblMat002D.Text = "Español 0%";
+                            divMat004D.Attributes["style"] = "width: 0%";
+                            lblMat004D.Text = "Español 0%";
                             break;
 
                         case 5:
 
                             lblMateria005.Text = "Geografía";
-                            divMat002D.Attributes["style"] = "width: 0%";
-                            lblMat002D.Text = "Español 0%";
+                            divMat005D.Attributes["style"] = "width: 0%";
+                            lblMat005D.Text = "Español 0%";
                             break;
 
                         case 6:
 
                             lblMateria006.Text = "Historia: México";
-                            divMat002D.Attributes["style"] = "width: 0%";
-                            lblMat002D.Text = "Español 0%";
+                            divMat006D.Attributes["style"] = "width: 0%";
+                            lblMat006D.Text = "Español 0%";
                             break;
 
                         case 7:
 
                             lblMateria007.Text = "Historia: Universal";
-                            divMat002D.Attributes["style"] = "width: 0%";
-                            lblMat002D.Text = "Español 0%";
+                            divMat007D.Attributes["style"] = "width: 0%";
+                            lblMat007D.Text = "Español 0%";
                             break;
 
                         case 8:
 
                             lblMateria008.Text = "Literatura";
-                            divMat002D.Attributes["style"] = "width: 0%";
-                            lblMat002D.Text = "Español 0%";
+                            divMat008D.Attributes["style"] = "width: 0%";
+                            lblMat008D.Text = "Español 0%";
                             break;
 
                         case 9:
 
                             lblMateria009.Text = "Matemáticas";
-                            divMat002D.Attributes["style"] = "width: 0%";
-                            lblMat002D.Text = "Español 0%";
+                            divMat009D.Attributes["style"] = "width: 0%";
+                            lblMat009D.Text = "Español 0%";
                             break;
 
                         case 10:
 
                             lblMateria010.Text = "Química";
-                            divMat002D.Attributes["style"] = "width: 0%";
-                            lblMat002D.Text = "Español 0%";
+                            divMat0010D.Attributes["style"] = "width: 0%";
+                            lblMat0010D.Text = "Español 0%";
                             break;
 
                         case 0:

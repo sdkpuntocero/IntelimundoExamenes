@@ -13,9 +13,8 @@ namespace IntelimundoExamenes
     
     public partial class tblPreguntasRespuestas_Result
     {
-        public Nullable<int> MateriaID { get; set; }
-        public int Tipo { get; set; }
-        public Nullable<int> TipoPreguntaID { get; set; }
-        public Nullable<int> Preguntas { get; set; }
+        public string Materia { get; set; }
+        public Nullable<int> DiagnoticoP { get; set; }
+        public Nullable<int> CuestionarioP { get; set; }
     }
 }

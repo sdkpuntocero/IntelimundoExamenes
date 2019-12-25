@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="db_imModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="db_imModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="catMateria">
           <Key>
             <PropertyRef Name="MateriaID" />
@@ -19,16 +19,16 @@
           <Property Name="MateriaTema" Type="varchar" MaxLength="100" />
           <Property Name="MateriaID" Type="int" />
           <Property Name="MateriaOrdenID" Type="int" />
-          <Property Name="MateriaTemaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MateriaTemaID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="catMateriaTemaPregunta">
           <Key>
             <PropertyRef Name="MateriaTemaPreguntaID" />
           </Key>
           <Property Name="TipoPreguntaID" Type="int" />
-          <Property Name="MateriaTemaPregunta" Type="varchar" MaxLength="350" />
+          <Property Name="MateriaTemaPregunta" Type="varchar(max)" />
           <Property Name="MateriaTemaID" Type="int" />
-          <Property Name="MateriaTemaPreguntaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MateriaTemaPreguntaID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="catMateriaTemaPreguntaRespuesta">
           <Key>
@@ -38,7 +38,7 @@
           <Property Name="Respuesta" Type="bit" />
           <Property Name="MateriaTemaPreguntaID" Type="int" />
           <Property Name="Justificacion" Type="varchar(max)" />
-          <Property Name="MateriaTemaPreguntaRespuestaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MateriaTemaPreguntaRespuestaID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="catMateriaTemaPreguntaRespuestaBitacora">
           <Key>
@@ -977,14 +977,14 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
           <Parameter Name="MateriaTemaPreguntaIDFiltro" Type="int" Mode="In" />
         </Function>
         <Function Name="tblPreguntasRespuestas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MateriaF" Type="int" Mode="In" />
           <Parameter Name="UsuarioFiltrado" Type="uniqueidentifier" Mode="In" />
           <ReturnType>
             <CollectionType>
               <RowType>
-                <Property Name="MateriaID" Type="int" />
-                <Property Name="Tipo" Type="int" Nullable="false" />
-                <Property Name="TipoPreguntaID" Type="int" />
-                <Property Name="Preguntas" Type="int" />
+                <Property Name="Materia" Type="varchar" MaxLength="50" />
+                <Property Name="DiagnoticoP" Type="int" />
+                <Property Name="CuestionarioP" Type="int" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -1204,10 +1204,16 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
             <End Role="inf_vnta_inv" EntitySet="inf_vnta_inv" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="db_imModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="tblPreguntasRespuestas_Result">
+          <Property Name="Materia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DiagnoticoP" Type="Int32" />
+          <Property Name="CuestionarioP" Type="Int32" />
+        </ComplexType>
         <EntityType Name="catMateria">
           <Key>
             <PropertyRef Name="MateriaID" />
@@ -1219,40 +1225,40 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
           <Key>
             <PropertyRef Name="MateriaTemaID" />
           </Key>
-          <Property Name="MateriaTemaID" Type="Int32" Nullable="false" />
           <Property Name="MateriaTema" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MateriaID" Type="Int32" />
           <Property Name="MateriaOrdenID" Type="Int32" />
+          <Property Name="MateriaTemaID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="catMateriaTemaPregunta">
           <Key>
             <PropertyRef Name="MateriaTemaPreguntaID" />
           </Key>
-          <Property Name="MateriaTemaPreguntaID" Type="Int32" Nullable="false" />
-          <Property Name="MateriaTemaPregunta" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
-          <Property Name="MateriaTemaID" Type="Int32" />
           <Property Name="TipoPreguntaID" Type="Int32" />
+          <Property Name="MateriaTemaPregunta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MateriaTemaID" Type="Int32" />
+          <Property Name="MateriaTemaPreguntaID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="catMateriaTemaPreguntaRespuesta">
           <Key>
             <PropertyRef Name="MateriaTemaPreguntaRespuestaID" />
           </Key>
-          <Property Name="MateriaTemaPreguntaRespuestaID" Type="Int32" Nullable="false" />
           <Property Name="MateriaTemaPreguntaRespuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Respuesta" Type="Boolean" />
-          <Property Name="Justificacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="MateriaTemaPreguntaID" Type="Int32" />
+          <Property Name="Justificacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MateriaTemaPreguntaRespuestaID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="catMateriaTemaPreguntaRespuestaBitacora">
           <Key>
             <PropertyRef Name="MateriaTemaPreguntaRespuestaBitacoraID" />
           </Key>
-          <Property Name="MateriaTemaPreguntaRespuestaBitacoraID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoPreguntaID" Type="Int32" />
           <Property Name="MateriaTemaPreguntaRespuestaID" Type="Int32" />
           <Property Name="UsuarioID" Type="Guid" />
           <Property Name="FechaRegistro" Type="DateTime" Precision="0" />
           <Property Name="MateriaTemaPreguntaID" Type="Int32" />
-          <Property Name="TipoPreguntaID" Type="Int32" />
+          <Property Name="MateriaTemaPreguntaRespuestaBitacoraID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="catMateriaTemaSintesis">
           <Key>
@@ -2437,6 +2443,10 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
             <End Role="inf_vnta" EntitySet="inf_vnta" />
             <End Role="inf_vnta_inv" EntitySet="inf_vnta_inv" />
           </AssociationSet>
+          <FunctionImport Name="tblPreguntasRespuestas" IsComposable="true" ReturnType="Collection(db_imModel.tblPreguntasRespuestas_Result)">
+            <Parameter Name="MateriaF" Mode="In" Type="Int32" />
+            <Parameter Name="UsuarioFiltrado" Mode="In" Type="Guid" />
+          </FunctionImport>
           <FunctionImport Name="PreguntasSP" ReturnType="Collection(db_imModel.PreguntasSP_Result)">
             <Parameter Name="MateriaIDFiltro" Mode="In" Type="Int32" />
             <Parameter Name="MateriaTemaIDFiltro" Mode="In" Type="Int32" />
@@ -2447,25 +2457,16 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
             <Parameter Name="MateriaTemaIDFiltro" Mode="In" Type="Int32" />
             <Parameter Name="MateriaTemaPreguntaIDFiltro" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="tblPreguntasRespuestas" IsComposable="true" ReturnType="Collection(db_imModel.tblPreguntasRespuestas_Result)">
-            <Parameter Name="UsuarioFiltrado" Mode="In" Type="Guid" />
-          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="PreguntasSP_Result">
           <Property Type="Int64" Name="NuevoID" Nullable="true" />
-          <Property Type="String" Name="MateriaTemaPregunta" Nullable="true" MaxLength="350" />
+          <Property Type="String" Name="MateriaTemaPregunta" Nullable="true" />
           <Property Type="Int32" Name="MateriaTemaPreguntaID" Nullable="false" />
         </ComplexType>
         <ComplexType Name="RespuestasSP_Result">
           <Property Type="Int64" Name="NuevoID" Nullable="true" />
           <Property Type="String" Name="MateriaTemaPreguntaRespuesta" Nullable="true" />
           <Property Type="Int32" Name="MateriaTemaPreguntaRespuestaID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="tblPreguntasRespuestas_Result">
-          <Property Type="Int32" Name="MateriaID" Nullable="true" />
-          <Property Type="Int32" Name="Tipo" Nullable="false" />
-          <Property Type="Int32" Name="TipoPreguntaID" Nullable="true" />
-          <Property Type="Int32" Name="Preguntas" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2484,10 +2485,10 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
           <EntitySetMapping Name="catMateriaTema">
             <EntityTypeMapping TypeName="db_imModel.catMateriaTema">
               <MappingFragment StoreEntitySet="catMateriaTema">
-                <ScalarProperty Name="MateriaOrdenID" ColumnName="MateriaOrdenID" />
-                <ScalarProperty Name="MateriaTemaID" ColumnName="MateriaTemaID" />
                 <ScalarProperty Name="MateriaTema" ColumnName="MateriaTema" />
                 <ScalarProperty Name="MateriaID" ColumnName="MateriaID" />
+                <ScalarProperty Name="MateriaOrdenID" ColumnName="MateriaOrdenID" />
+                <ScalarProperty Name="MateriaTemaID" ColumnName="MateriaTemaID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2495,20 +2496,20 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
             <EntityTypeMapping TypeName="db_imModel.catMateriaTemaPregunta">
               <MappingFragment StoreEntitySet="catMateriaTemaPregunta">
                 <ScalarProperty Name="TipoPreguntaID" ColumnName="TipoPreguntaID" />
-                <ScalarProperty Name="MateriaTemaPreguntaID" ColumnName="MateriaTemaPreguntaID" />
                 <ScalarProperty Name="MateriaTemaPregunta" ColumnName="MateriaTemaPregunta" />
                 <ScalarProperty Name="MateriaTemaID" ColumnName="MateriaTemaID" />
+                <ScalarProperty Name="MateriaTemaPreguntaID" ColumnName="MateriaTemaPreguntaID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="catMateriaTemaPreguntaRespuesta">
             <EntityTypeMapping TypeName="db_imModel.catMateriaTemaPreguntaRespuesta">
               <MappingFragment StoreEntitySet="catMateriaTemaPreguntaRespuesta">
-                <ScalarProperty Name="MateriaTemaPreguntaRespuestaID" ColumnName="MateriaTemaPreguntaRespuestaID" />
                 <ScalarProperty Name="MateriaTemaPreguntaRespuesta" ColumnName="MateriaTemaPreguntaRespuesta" />
                 <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
-                <ScalarProperty Name="Justificacion" ColumnName="Justificacion" />
                 <ScalarProperty Name="MateriaTemaPreguntaID" ColumnName="MateriaTemaPreguntaID" />
+                <ScalarProperty Name="Justificacion" ColumnName="Justificacion" />
+                <ScalarProperty Name="MateriaTemaPreguntaRespuestaID" ColumnName="MateriaTemaPreguntaRespuestaID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2516,11 +2517,11 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
             <EntityTypeMapping TypeName="db_imModel.catMateriaTemaPreguntaRespuestaBitacora">
               <MappingFragment StoreEntitySet="catMateriaTemaPreguntaRespuestaBitacora">
                 <ScalarProperty Name="TipoPreguntaID" ColumnName="TipoPreguntaID" />
-                <ScalarProperty Name="MateriaTemaPreguntaRespuestaBitacoraID" ColumnName="MateriaTemaPreguntaRespuestaBitacoraID" />
                 <ScalarProperty Name="MateriaTemaPreguntaRespuestaID" ColumnName="MateriaTemaPreguntaRespuestaID" />
                 <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
                 <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
                 <ScalarProperty Name="MateriaTemaPreguntaID" ColumnName="MateriaTemaPreguntaID" />
+                <ScalarProperty Name="MateriaTemaPreguntaRespuestaBitacoraID" ColumnName="MateriaTemaPreguntaRespuestaBitacoraID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3034,6 +3035,15 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionName="db_imModel.Store.tblPreguntasRespuestas" FunctionImportName="tblPreguntasRespuestas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_imModel.tblPreguntasRespuestas_Result">
+                <ScalarProperty Name="Materia" ColumnName="Materia" />
+                <ScalarProperty Name="DiagnoticoP" ColumnName="DiagnoticoP" />
+                <ScalarProperty Name="CuestionarioP" ColumnName="CuestionarioP" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="PreguntasSP" FunctionName="db_imModel.Store.PreguntasSP">
             <ResultMapping>
               <ComplexTypeMapping TypeName="db_imModel.PreguntasSP_Result">
@@ -3049,16 +3059,6 @@ advertencia 6002: La tabla o vista 'db_im.dbo.inf_sepomex' no tiene definida nin
                 <ScalarProperty Name="NuevoID" ColumnName="NuevoID" />
                 <ScalarProperty Name="MateriaTemaPreguntaRespuesta" ColumnName="MateriaTemaPreguntaRespuesta" />
                 <ScalarProperty Name="MateriaTemaPreguntaRespuestaID" ColumnName="MateriaTemaPreguntaRespuestaID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="tblPreguntasRespuestas" FunctionName="db_imModel.Store.tblPreguntasRespuestas">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="db_imModel.tblPreguntasRespuestas_Result">
-                <ScalarProperty Name="MateriaID" ColumnName="MateriaID" />
-                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-                <ScalarProperty Name="TipoPreguntaID" ColumnName="TipoPreguntaID" />
-                <ScalarProperty Name="Preguntas" ColumnName="Preguntas" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
